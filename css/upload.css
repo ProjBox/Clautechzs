@@ -6,10 +6,7 @@
   border-radius: 5px;
 }
 
-.memeupload{
 
-  margin-top: 99px;
-}
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
  background-color: #ff6600;
@@ -140,7 +137,7 @@ textarea {
 
 
 /* ===================== FILE INPUT ===================== */
-.file-area {
+.file-pane {
   width: 100%;
   position: relative;}
   
@@ -156,7 +153,7 @@ textarea {
     cursor: pointer;
   }
   
-  .file-dummy {
+  .file-kick {
     width: 100%;
     padding: 30px;
     background: rgba(255,255,255,0.2);
@@ -173,11 +170,11 @@ textarea {
   
  
   
-  &:hover .file-dummy {
+  &:hover .file-kick {
     background: rgba(255,255,255,0.1);
   }
   
- .form-popup input[type=file]:focus + .file-dummy {
+ .form-popup input[type=file]:focus + .file-kick {
     /*outline: 2px solid rgba(255,255,255,0.5);*/
     outline: 2px solid #ff660085;
     /*outline: 2px solid #0ce14887;*/
@@ -185,11 +182,11 @@ textarea {
 
   }
   
-  .form-popup input[type=file]:valid + .file-dummy {
+  .form-popup input[type=file]:valid + .file-kick {
     border-color: rgba(0,255,0,0.4);
     background-color: rgba(0,255,0,0.3);
   }
-  .form-popup input[type=file]:valid + .file-dummy:before {
+  .form-popup input[type=file]:valid + .file-kick:before {
     border-color: rgba(0,255,0,0.4);
     background-color: rgba(0,255,0,0.3);
     content: "File Selected! ";
@@ -232,12 +229,12 @@ textarea {
   }
 
 
-.form-controll {
+.form-set {
   display: block;
   padding: 8px 16px;
   width: 100%;
   font-size: 16px;
-  background-color: rgb(227 227 227);
+  background-color: rgb(233 233 233);
   border: 1px solid rgba(255,255,255,0.3);
   color: #201f1f;
   font-weight: 200;}
