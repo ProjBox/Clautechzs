@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const subtotal = document.getElementById('subtotal');
         const total = document.getElementById('total');
 
-        // const productIdToImageMap = {};
+
 
 
         let timerObject = {
@@ -143,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 updateTotal();
             });
 
+
             // Capture product details
             let product = event.target.parentNode;
             let productId = product.id;
@@ -152,9 +153,6 @@ document.addEventListener("DOMContentLoaded", function() {
             let productPrice = product.querySelector('.product-price').innerHTML.replace(/[^\d.-]/g, '');
             productPrice = Number(productPrice);
             let productUpdatedPrice = productPrice;
-
-            // // Store the product ID and its corresponding image source in the map
-            // productIdToImageMap[productId] = productImageSrc;
 
             thisClass = product.classList.value.split(' ');
 
@@ -170,9 +168,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Add a new row for image in image table
             let imageTableRow = document.createElement('tr');
-             // Hmmm..
-            let imgRowId = `img-${productId}`; // Construct the image row ID
-            imageTableRow.setAttribute('id', imgRowId); // Set the ID attribute for the image row
             document.getElementById('cart-table-img-body').appendChild(imageTableRow);
 
             let imageCell = imageTableRow.insertCell(0);
@@ -184,7 +179,6 @@ document.addEventListener("DOMContentLoaded", function() {
             // Add a new row for each product in main table
             let productRow = document.createElement('tr');
             productRow.setAttribute('id', productId);
-            productRow.setAttribute('data-img-row-id', `img-${productId}`); // Add data attribute
             cartTableBody.appendChild(productRow);
 
             let nameCell = productRow.insertCell(0);
@@ -230,76 +224,143 @@ document.addEventListener("DOMContentLoaded", function() {
 
         }
 
+
+
+
+        // @@ENHANCED@@
+
+        // Updated addToCart function
+// function addToCart(event) {
+//     const clickedButton = event.target;
+    
+//     // Check if the clicked element is the "BUY" button
+//     if (!clickedButton.classList.contains('add-to-cart')) return;
+
+//     const product = clickedButton.closest('.products');
+//     if (!product) return; // If the product element is not found, exit
+
+//     const productId = product.id;
+
+//     // Check if the product is already in the cart
+//     if (added.includes(productId)) {
+//         // Handle duplicate product
+//         // Increment quantity or any other action you want to perform
+
+//         duplicateId = '#' + event.target.parentElement.id;
+//         const quantityInput = cartTableBody.querySelector(duplicateId).querySelector('.quantity-value');
+//         quantityInput.value++;
+
+//         // Update details after increasing quantity
+//         updateQuantity(quantityInput);
+//         updateSubtotal();
+//         updateTotal();
+//         populateProductDetailsInput();
+
+//         return;
+//     }
+
+//     // Capture product details
+//     const productName = product.querySelector('.product-name').textContent;
+//     const productImageSrc = product.querySelector('.product-image').src;
+//     const productPrice = parseFloat(product.querySelector('.product-price').getAttribute('value'));
+    
+//     let productUpdatedPrice = productPrice;
+
+//     // Add product to the cart
+//     cart.items.push({
+//         'product': productId,
+//         'productName': productName,
+//         'productPrice': productPrice,
+//         // Add any additional product details here
+//         'productUpdatedPrice': productUpdatedPrice,
+//     });
+
+//     // Update UI or perform any other action as needed
+//     // For example, update the cart display, total price, etc.
+
+//     // Add a new row for image in image table
+//     let imageTableRow = document.createElement('tr');
+//     document.getElementById('cart-table-img-body').appendChild(imageTableRow);
+
+//     let imageCell = imageTableRow.insertCell(0);
+//     let productImage = document.createElement('img');
+//     productImage.src = productImageSrc;
+//     productImage.classList.add('thumbnail');
+//     imageCell.appendChild(productImage);
+
+//     // Add a new row for each product in main table
+//     let productRow = document.createElement('tr');
+//     productRow.setAttribute('id', productId);
+//     cartTableBody.appendChild(productRow);
+
+//     let nameCell = productRow.insertCell(0);
+//     nameCell.innerHTML = productName;
+
+//     let quantityCell = productRow.insertCell(1);
+//     quantityCell.innerHTML = cartProductQuantity;
+//     quantityCell.setAttribute('id', 'quantity');
+
+//     let priceCell = productRow.insertCell(2);
+//     priceCell.innerHTML = productPrice;
+//     priceCell.setAttribute('id', 'product-price');
+//     priceCell.setAttribute('class', 'cart-product-price');
+
+//     let updatedPriceCell = productRow.insertCell(3);
+//     updatedPriceCell.innerHTML = productPrice;
+//     updatedPriceCell.setAttribute('id', 'updated-product-price');
+//     updatedPriceCell.setAttribute('class', 'cart-updated-product-price');
+
+//     let updateBtnCell = productRow.insertCell(4);
+//     updateBtnCell.innerHTML = "<button type='button' id='update' onclick='updateTotal()'><i class='fa fa-refresh' aria-hidden='true'></i></button>";
+
+//     let removeBtnCell = productRow.insertCell(5);
+//     removeBtnCell.innerHTML = productRemove;
+
+//     updateSubtotal();
+//     updateTotal();
+//     updateButtonVisibility();
+//     populateProductDetailsInput();
+
+//     $('.slider').toggleClass('close');
+    
+//     // Ensure the cart-table-img-body, subtotal and total are set to display
+//     document.getElementById('cart-table-img-body').style.display = 'table-row-group';
+//     document.getElementById('subtotal').style.display = 'block'; 
+//     document.getElementById('total').style.display = 'block'; 
+
+//     // Ensure the added product is marked to prevent duplicates
+//     added.unshift(productId);
+// }
+
+
+
+
         /*==Cart Remove Controls==*/
         function removeFromCart(event) {
+            event.preventDefault(); 
 
-       let parentRow = event.target.closest('tr');
-        if (!parentRow) return;
+            let parentRow = event.target.closest('tr');
+            if (!parentRow) return;
 
-        let productId = parentRow.id;
+            let parentBody = parentRow.parentNode;
+            let parentRowId = parentRow.id;
 
-        // Remove the main item row
-        parentRow.remove();
-
-        // Remove the corresponding image row
-        let imgRowId = `img-${productId}`;
-        console.log("Image Row ID:", imgRowId); // Log the image row ID
-        let imgRow = document.getElementById(imgRowId);
-        console.log("Image Row:", imgRow); // Log the image row
-        if (imgRow) {
-            imgRow.remove();
-        } else {
-            console.log("Image row not found!"); // Log if image row not found
-        }
-
-        // Update added items list
-        let index = added.indexOf(productId);
-        if (index !== -1) {
-            added.splice(index, 1);
-        }
-
-        // Update cart items list
-        cart.items = cart.items.filter(item => item.product !== productId);
-
-            // let parentBody = parentRow.parentNode;
-            // let parentRowId = parentRow.id;
-
-            // let productId = parentRow.id;
-
-
-            // // Remove the main item
-            // parentBody.removeChild(parentRow);
-
-            // // Remove the main item
-            // // parentRow.parentNode.removeChild(parentRow);
-
-            //  //*Remove the thumbnail*
-            // let imgTableBody = document.getElementById('cart-table-img-body');
-            // let imgRow = imgTableBody.querySelector('tr');
-            // if (imgRow) {
-            //     imgTableBody.removeChild(imgRow);
-
-            //     updateSubtotal();
-            //     updateTotal();
-            // }
+            // Remove the main item
+            parentBody.removeChild(parentRow);
 
             // Update added items list
-            // var index = added.indexOf(parentRowId);
-            // if (index !== -1) {
-            //     added.splice(index, 1);
-            // }
+            var index = added.indexOf(parentRowId);
+            if (index !== -1) {
+                added.splice(index, 1);
+            }
 
             // Update cart items list
-            // cart.items = cart.items.filter(item => item.product !== productId);
-
-
-            // Update cart items list
-            // for (let item of cart.items) {
-            //     if (item.product === parentRowId) {
-            //         let idx = cart.items.indexOf(item);
-            //         cart.items.splice(idx, 1);
-            //     }
-            // }
+            for (let item of cart.items) {
+                if (item.product === parentRowId) {
+                    let idx = cart.items.indexOf(item);
+                    cart.items.splice(idx, 1);
+                }
+            }
 
             cartTableBody.addEventListener('input', function(event) {
                 if (event.target && event.target.classList.contains('quantity-value')) {
@@ -317,15 +378,15 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
 
-            // //*Remove the thumbnail*
-            // let imgTableBody = document.getElementById('cart-table-img-body');
-            // let imgRow = imgTableBody.querySelector('tr');
-            // if (imgRow) {
-            //     imgTableBody.removeChild(imgRow);
+            //*Remove the thumbnail*
+            let imgTableBody = document.getElementById('cart-table-img-body');
+            let imgRow = imgTableBody.querySelector('tr');
+            if (imgRow) {
+                imgTableBody.removeChild(imgRow);
 
-            //     updateSubtotal();
-            //     updateTotal();
-            // }
+                updateSubtotal();
+                updateTotal();
+            }
 
             /*__Empty Cart Modifications 1__*/
             //*If no items remain in the cart, hide necessary elements*
@@ -612,7 +673,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             ${productDetailsHTML}
             <h4>Order Information:</h4>
-            <p>Order Number: <strong style="color: #ff6600;">${orderNumber}</strong></p>
+            <p>Order Number: ${orderNumber}</p>
             <p>Name: ${name}</p>
             <p>Phone: ${phone}</p>
             <p>Location: ${location}</p>
@@ -622,11 +683,13 @@ document.addEventListener("DOMContentLoaded", function() {
             <h5><strong>Payment Method:</strong></h5>
             ${paymentMethodHTML}
             <p>Date and Time: ${getDateTime()}</p>
-            <p style="color: #ff6600; font-style: italic; font-weight: 600;"><strong style="color: #000000; font-style: normal;">Note:</strong> ${info}</p>
+            <p><strong>Note:</strong> ${info}</p>
             <p>Subtotal: ₦${cart.subtotal.toFixed(2)}</p>
             <p><strong>Total: ₦${cart.total.toFixed(2)}</strong></p>
         `;
         }
+
+
 
 
         /*== Update for Steps ==*/
@@ -810,7 +873,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 initPayChar.style.opacity = 0.4;
             } else {
                 // If a radio button or payment method is selected..
-                currentStep = 4;  // proceed to the final step
+                currentStep = 4;  // To the final step
                 updateStep();
             }
 
@@ -828,14 +891,17 @@ document.addEventListener("DOMContentLoaded", function() {
         // document.querySelectorAll('.add-to-cart').forEach(button => {
         //     button.addEventListener('click', addToCart);
         // });
+
         // Event listener to handle click events on the parent element
-        document.addEventListener('click', function(event) {
-            // Check if the clicked element is the buy button
-            if (event.target && event.target.classList.contains('add-to-cart')) {
-                // Call addToCart function passing the event
-                addToCart(event);
-            }
-        });
+            document.addEventListener('click', function(event) {
+                // Check if the clicked element is the buy button
+                if (event.target && event.target.classList.contains('add-to-cart')) {
+                    // Call addToCart function passing the event
+                    addToCart(event);
+                }
+            });
+
+
 
         document.getElementById('cancelOrderButton').addEventListener('click', function() {
             clearCart();
@@ -850,6 +916,8 @@ document.addEventListener("DOMContentLoaded", function() {
             location.reload(); // Redirect to last location.
         });
 
+
+
        /*==paysstacks==*/
         function handleForm() {
             // Gather form data for paystack
@@ -860,25 +928,26 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Add more form fields as needed
             };
 
+
             // calls Paystack logic
             payWithPaystack(formData);
         }
 
         function payWithPaystack(formData) {
             let handler = PaystackPop.setup({
-                key: 'pk_test_bad57d50b13cdfa9057402b543afa2892866350e', // PK
+                key: 'pk_test_6b1cc58f2827ac858c2d25c77ee1d78498cb8f9f', // PK
                 email: formData.email,
                 amount: formData.amount * 100,
                 currency: 'NGN', // Naira
                 ref: formData.orderNumberRef,
                 channel: 'card',
                 onClose: function () {
-                    alert('Click Okay to Cancel.');
+                    alert('Window closed.');
                 },
                 callback: function (response) {
-                    let message = 'Payment Successful! Order No: ' + response.reference;
+                    let message = 'Payment complete! Reference: ' + response.reference;
                     while (true) {
-                        let userConfirmed = confirm(message + '\n\n Click Okay to proceed ');
+                        let userConfirmed = confirm(message + '\n\n click to proceed ');
 
                         if (userConfirmed) {
 
@@ -934,53 +1003,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
         /*==Radio Buttons Controls==*/
 
-        // Get all radio buttons with the class 'bank-radio'
+        //*Get all radio buttons with the class 'bank-radio'*
         const bankRadios = document.querySelectorAll(".bank-radio");
 
-        // Initially hide tmr and note-msg elements
-        const tmrElements = document.querySelectorAll(".tmr");
-        const noteMsgElements = document.querySelectorAll(".note-msg");
-
-        tmrElements.forEach(function(element) {
-            element.style.display = "none";
-        });
-
-        noteMsgElements.forEach(function(element) {
-            element.style.display = "none";
-        });
-
         bankRadios.forEach(function(radio) {
-            radio.addEventListener("change", function() {
-                // Hide all bank details initially
-                const allBankDetails = document.querySelectorAll(".bank-details");
-                allBankDetails.forEach(function(bankDetail) {
-                    bankDetail.style.display = "none";
-                });
-
-                // Show the bank details
-                const value = radio.value;
-                const bankDetailToShow = document.querySelector(".bank-details." + value);
-                const initPayMsgRad = document.getElementById('initPayMsg');
-                let initPayCharRad = document.getElementById('payment-options');
-
-
-                if (bankDetailToShow) {
-                    bankDetailToShow.style.display = "block";
-                    // Show associated elements for bank details
-                    const associatedElements = bankDetailToShow.parentElement.querySelectorAll(".tmr, .note-msg");
-                    associatedElements.forEach(function(element) {
-                        element.style.display = "block";
-                    });
-
-                    initPayMsgRad.style.display = "none";
-                    initPayCharRad.style.background = "transparent";
-                    initPayCharRad.style.opacity = 1;
-                }
+        radio.addEventListener("change", function() {
+            // Hide all bank details initially
+            const allBankDetails = document.querySelectorAll(".bank-details");
+            allBankDetails.forEach(function(bankDetail) {
+                bankDetail.style.display = "none";
             });
+
+            // Show the bank details
+            const value = radio.value;
+            const bankDetailToShow = document.querySelector(".bank-details." + value);
+            
+            const initPayMsgRad = document.getElementById('initPayMsg');
+            let initPayCharRad = document.getElementById('payment-options');
+
+            if (bankDetailToShow) {
+                bankDetailToShow.style.display = "block";
+            }
+
+            initPayMsgRad.style.display = "none";
+            initPayCharRad.style.background = "transparent";
+            initPayCharRad.style.opacity = 1;
+
+
+            // Start the timer
+            startTimer();
         });
+    });
 
 
- 
     //*Radio associated with credit card*
     document.addEventListener("DOMContentLoaded", function() {
         const paymentMethods = document.querySelectorAll(".payment-method");

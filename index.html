@@ -9,7 +9,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	 <!-- 4# meta-description sum-up content -->
-	<meta name="description" content="Clautechzs is an online one stop shop for all type of items, devices, accessories. Clautechs delivers orders and service to schools">
+	<meta name="description" content="Clautechzs is an online one stop shop for all type of items, devices, accessories. Clautechs delivers orders and services to schools">
+
+	<!-- x# meta-keyword list-->
+    <meta name="keywords" content="Clautechzs, Clautechs, Clautech, clautechz, accessories, phone devices, maritime academy, Oron Uyo Nigeria, Nigeria Navy">
+
 
 	<!-- 5# canonical validating domain/page set canon -->
 	<link rel="canonical" href="https://Clautechzs.com/" />
@@ -21,8 +25,8 @@
 	<!-- 7# og sets facebook/linkin intigration -->
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Clautechzs online store" />
-	<meta property="og:description" content="Clautechzs is an online one stop shop for all type of items, devices, accessories. Clautechs delivers orders and service to schools" />
-	<meta property="og:image" content="img/siteimg.jpg"/>
+	<meta property="og:description" content="Clautechzs is an online one stop shop for all type of items, devices, accessories. Clautechs delivers orders and services to schools" />
+	<meta property="og:image" content="https://Clautechzs.com/img/og-card.png"/>
 	<meta property="og:url" content="https://Clautechzs.com/" />
 	<meta property="og:site_name" content="Clautechzs.com" />
 
@@ -30,8 +34,8 @@
 	<!-- 8# twitter intigration -->
 	<meta property="og:type" content="website" />
 	<meta name="twitter:title" content="Clautechzs online store">
-	<meta name="twitter:description" content="Clautechzs is an online one stop shop for all type of items, devices, accessories. Clautechs delivers orders and service to schools">
-	<meta name="twitter:image" content="img/siteimg.jpg">
+	<meta name="twitter:description" content="Clautechzs is an online one stop shop for all type of items, devices, accessories. Clautechs delivers orders and services to schools">
+	<meta name="twitter:image" content="https://Clautechzs.com/img/og-card.png">
 	<meta name="twitter:site" content="https://Clautechzs.com">
 	<meta name="twitter:url" content="https://Clautechzs.com">
 	<meta name="twitter:creator" content="@Clautechzs">
@@ -57,6 +61,18 @@
  
 </head>
 <body>
+
+	<div id="preloader">
+	  <div id="status">
+	     <div class="spinner">
+	      <div class="rect1"></div>
+	      <div class="rect2"></div>
+	      <div class="rect3"></div>
+	      <div class="rect4"></div>
+	      <div class="rect5"></div>
+	    </div>
+	  </div>
+	</div>
  
 	<div class="flex-main">
 		<!-- ==Header elements== -->
@@ -72,7 +88,7 @@
 			</div>
 
 			<nav class="navbar navbar-inverse">
-			  <div class="container-fluid">
+			  <div class="container-fluid cast">
 			    <div class="navbar-header">
 			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 			        <span class="icon-bar"></span>
@@ -86,8 +102,22 @@
 			    <div class="collapse navbar-collapse" id="myNavbar">
 			      <ul class="nav navbar-nav">
 			        <li class="active"><a href="index.html">Home</a></li>
-			        <li><a href="accessories/index.html">Accessories</a></li>
-			        <li><a href="store/index.html">Store</a></li>
+			        <li>
+			        	<a href="#" id="accessories-btn" class="filter-btn">
+			        		Accessories
+			        		<span class="check-icon">
+			        			<i class="fa fa-check-circle c" aria-hidden="true"></i>
+			        		</span>
+			        	</a>
+			        </li>
+			        <li>
+			        	<a href="#" id="store-btn" class="filter-btn">
+			        		Store
+			        		<span class="check-icon check-store">
+			        			<i class="fa fa-check-circle c" aria-hidden="true"></i>
+			        		</span>
+			        	</a>
+			        </li>
 			        <li><a href="services/index.html">Services</a></li>
 			        <li><a href="#contact">Contact</a></li>
 			      </ul>
@@ -101,7 +131,7 @@
 					    </div>
 			        </li>
 			        <li class="dropdown d">
-			        	<a href="#dpwn" class="dropbtn" >Customer Support</a>
+			        	<a href="#dpwn" class="dropbtn" >Customer Care</a>
 			        </li>
 			      </ul>
 			    </div>
@@ -139,7 +169,7 @@
 		        <!-- **ITEMS (@index)** -->
 		        <div id="shop" class="shop">
 		        	<!-- ===Show Case [1] Starts**=== -->
-		            <div class="products" id="gamepad">
+		            <!-- <div class="products" id="gamepad">
 		                <img class="product-image" src="items/gamepad.png">
 		                <h4 class="product-name">Wireless Twin GamePad</h4>
 		                <p class="product-description">Usb Twin Wirelees Vibration Controller</p>
@@ -165,18 +195,18 @@
 		            
 		            
 		            <div class="products" id="XboxSingleGamepd">
-		                <img class="product-image pad-dwn-2" src="items/XboxSingleGamepd.png">
+		                <img class="product-image" src="items/XboxSingleGamepd.png">
 		                <h4 class="product-name">Xbox Game Pad</h4>
 		                <p class="product-description">Single Xbox Game Pad. Xbox Arch</p>
 		                <p class="product-price" value='77'>12000</p>
 		                <button class="add-to-cart">BUY</button>
-		            </div>
+		            </div> -->
 		            <!-- ===Show Case [1] Ends**=== -->
 		            <!-- **************************** -->
 		            
 
 		             <!-- ==Show Case [2] Starts**== -->
-		            <div class="products" id="porpo">
+		            <!-- <div class="products" id="porpo">
 		                <img class="product-image" src="items/porpo.png">
 		                <h4 class="product-name">Porpo Calculator</h4>
 		                <p class="product-description">Sceintific Calculator. Porpo YH-200</p>
@@ -208,14 +238,14 @@
 		                <p class="product-description">20000mah Oraimo Power Bank</p>
 		                <p class="product-price" value='77'>15000</p>
 		                <button class="add-to-cart">BUY</button>
-		            </div>
+		            </div> -->
 		            <!-- ===Show Case [2] Ends**=== -->
 		            <!-- **************************** -->
 
 
 		            <!-- ==Show Case [3] Starts**== -->
-		            <div class="products" id="SingleWirelessGamepd">
-		                <img class="product-image pad-dwn-2" src="items/SingleWirelessGamepd.png">
+		            <!-- <div class="products" id="SingleWirelessGamepd">
+		                <img class="product-image" src="items/SingleWirelessGamepd.png">
 		                <h4 class="product-name">Single Wireless Game Pad </h4>
 		                <p class="product-description">Usb Single Shock Wireless Game Pad</p>
 		                <p class="product-price" value='77'>6500</p>
@@ -244,13 +274,13 @@
 		                <p class="product-description">iOS Stereo Handsfree(Pop-Up Window)</p>
 		                <p class="product-price" value='33'>3000</p>
 		                <button class="add-to-cart">BUY</button>
-		            </div>
+		            </div> -->
 		            <!-- ===Show Case [3] Ends**=== -->
 		            <!-- **************************** -->
 
 
 		            <!-- ==Show Case [4] Starts**== -->
-		            <div class="products" id="budearpod">
+		            <!-- <div class="products" id="budearpod">
 		                <img class="product-image" src="items/budearpod.png">
 		                <h4 class="product-name">Buds+ Earpods</h4>
 		                <p class="product-description">Buds+ Air F9 Max Power bank/Earpod and Phone holder</p>
@@ -280,17 +310,18 @@
 		                <p class="product-description">White quality Inner Wear(Chase Deer)</p>
 		                <p class="product-price" value='44'>2000</p>
 		                <button class="add-to-cart">BUY</button>
-		            </div>
+		            </div> -->
 		            <!-- ===Show Case [4] Ends**=== -->
 		            <!-- **************************** -->
 
 
 		             <!-- ==Show Case [5]==** -->
-		              <div class="products" id="whitesocks">
+		            <div class="products" id="whitesocks">
 		                <img class="product-image pad-dwn" src="items/whitesocks.png">
 		                <h4 class="product-name">White Sock</h4>
 		                <p class="product-description">Pair of White Socks</p>
-		                <p class="product-price" value='55'>500</p>
+		                <p class="product-category">Catg: others</p>
+		                <p class="product-price">600</p>
 		                <button class="add-to-cart">BUY</button>
 		            </div>
 
@@ -298,7 +329,8 @@
 		                <img class="product-image" src="items/ptwhitesportswear.png">
 		                <h4 class="product-name">White Sports short</h4>
 		                <p class="product-description">ND1 PT White Sports Wear</p>
-		                <p class="product-price" value='55'>2000</p>
+		                <p class="product-category">Catg: others</p>
+		                <p class="product-price">3000</p>
 		                <button class="add-to-cart">BUY</button>
 		            </div>
 		            
@@ -306,7 +338,8 @@
 		                <img class="product-image" src="items/yelloshirt.png">
 		                <h4 class="product-name">Yellow Shirt</h4>
 		                <p class="product-description">ND1 Yellow Hostel Wear</p>
-		                <p class="product-price" value='55'>2500</p>
+		                <p class="product-category">Catg: others</p>
+		                <p class="product-price">3000</p>
 		                <button class="add-to-cart">BUY</button>
 		            </div>
 		            
@@ -314,7 +347,8 @@
 		                <img class="product-image" src="items/whiteshort.png">
 		                <h4 class="product-name">White Short</h4>
 		                <p class="product-description">ND1 White short</p>
-		                <p class="product-price" value='55'>1200</p>
+		                <p class="product-category">Catg: others</p>
+		                <p class="product-price">1250</p>
 		                <button class="add-to-cart">BUY</button>
 		            </div>
 		            <!-- ===Show Case [5] Ends**=== -->
@@ -322,53 +356,63 @@
 
 
 		            <!-- ==Show Case [6] starts**== -->
-		            <div class="products" id="greenshirt">
+		            <!-- <div class="products" id="greenshirt">
 		                <img class="product-image" src="items/greenshirt.png">
 		                <h4 class="product-name">Green Shirt</h4>
 		                <p class="product-description">H1 Green Hostel Wear</p>
-		                <p class="product-price" value='66'>2500</p>
+		                <p class="product-price">2500</p>
 		                <button class="add-to-cart">BUY</button>
 		            </div>
 
 		            <div class="products" id="coverall">
-		                <img class="product-image pad-dwn-2" src="items/coverall.png">
+		                <img class="product-image" src="items/coverall.png">
 		                <h4 class="product-name">Coverall Safety Wear</h4>
 		                <p class="product-description">Workshop Safety Wear</p>
-		                <p class="product-price" value='66'>6000</p>
+		                <p class="product-price">6000</p>
 		                <button class="add-to-cart">BUY</button>
 		            </div>
 
 		            <div class="products" id="touchlight">
-		                <img class="product-image pad-dwn-2" src="items/touchlight.png">
+		                <img class="product-image" src="items/touchlight.png">
 		                <h4 class="product-name">Touchlight</h4>
 		                <p class="product-description">Small Touchlight</p>
-		                <p class="product-price" value='66'>2500</p>
+		                <p class="product-price">2500</p>
 		                <button class="add-to-cart">BUY</button>
 		            </div>
 		            <div class="products" id="FrezzilEarphone">
-		                <img class="product-image pad-dwn-2" src="items/FrezzilEarphone.png">
+		                <img class="product-image" src="items/FrezzilEarphone.png">
 		                <h4 class="product-name">Frezzil Earphone</h4>
 		                <p class="product-description">Frezzil E10 Stereo Earphone</p>
-		                <p class="product-price" value='66'>1500</p>
+		                <p class="product-price">1500</p>
 		                <button class="add-to-cart">BUY</button>
-		            </div>
+		            </div> -->
 		            <!-- ===Show Case [6] Ends**=== -->
 		            <!-- **************************** -->
 
 		            <!-- ==Show Case [7] starts**== -->
 		            <div class="products" id="OraimoCharger">
 		                <img class="product-image" src="items/OraimoCharger.png">
-		                <h4 class="product-name">Oraimo Charger</h4>
-		                <p class="product-description">Oraimo Fast Charger Head and usb Cord</p>
-		                <p class="product-price" value='77'>3000</p>
+		                <h4 class="product-name"></h4>
+		                <p class="product-description"></p>
+		                <p class="product-category">Catg: accessories</p>
+		                <p class="product-price">4000</p>
 		                <button class="add-to-cart">BUY</button>
 		            </div>
+		            <!-- <div class="products" id="OraimoCharger">
+		                <img class="product-image" src="items/OraimoCharger.png">
+		                <h4 class="product-name">Oraimo Charger</h4>
+		                <p class="product-description">Oraimo Fast Charger Head and usb Cord</p>
+		                <p class="product-category">Catg: accessories</p>
+		                <p class="product-price">3000</p>
+		                <button class="add-to-cart">BUY</button>
+		            </div> -->
 
 		            <div class="products" id="InfinixCharger">
-		                <img class="product-image pad-dwn-2" src="items/InfinixCharger.png">
+		                <img class="product-image" src="items/InfinixCharger.png">
 		                <h4 class="product-name">Infinix Charger</h4>
 		                <p class="product-description">Infinix Fast Charging Power Head and usb Cord</p>
-		                <p class="product-price" value='77'>2500</p>
+		                <p class="product-category">Catg: accessories</p>
+		                <p class="product-price">3000</p>
 		                <button class="add-to-cart">BUY</button>
 		            </div>
 
@@ -376,14 +420,16 @@
 		                <img class="product-image" src="items/7-star-type-usb-cord.png">
 		                <h4 class="product-name">7-Star Usb Cord</h4>
 		                <p class="product-description">Micro to Usb Cable Fast Charger</p>
-		                <p class="product-price" value='33'>1500</p>
+		                <p class="product-category">Catg: accessories</p>
+		                <p class="product-price">1750</p>
 		                <button class="add-to-cart">BUY</button>
 		            </div>
 		            <div class="products" id="OraimoIphoneCord">
-		                <img class="product-image pad-dwn-2" src="items/OraimoIphoneCord.png">
+		                <img class="product-image" src="items/OraimoIphoneCord.png">
 		                <h4 class="product-name">Oraimo Iphone Cords </h4>
 		                <p class="product-description">Oraimo usb Fast Charging Cord</p>
-		                <p class="product-price" value='77'>1500</p>
+		                <p class="product-category">Catg: accessories</p>
+		                <p class="product-price">2000</p>
 		                <button class="add-to-cart">BUY</button>
 		            </div>
 		            <!-- ===Show Case [7] Ends**=== -->
@@ -394,15 +440,17 @@
 		                <img class="product-image" src="items/wiredmouse.png">
 		                <h4 class="product-name">Wired Mouse</h4>
 		                <p class="product-description">Usb Confort Optical Wired Mouse</p>
-		                <p class="product-price" value='22'>1500</p>
+		                <p class="product-category">Catg: accessories</p>
+		                <p class="product-price">1800</p>
 		                <button class="add-to-cart">BUY</button>
 		            </div>
 
 		            <div class="products" id="laptopSkinCover">
-		                <img class="product-image pad-dwn-2" src="items/laptopSkinCover.png">
+		                <img class="product-image" src="items/laptopSkinCover.png">
 		                <h4 class="product-name">Laptop Skin Cover</h4>
 		                <p class="product-description">Life Background Laptop Skin Cover</p>
-		                <p class="product-price" value='77'>2500</p>
+		                <p class="product-category">Catg: accessories</p>
+		                <p class="product-price">2000</p>
 		                <button class="add-to-cart">BUY</button>
 		            </div>
 
@@ -410,14 +458,16 @@
 		                <img class="product-image" src="items/7-star-type-c-cord.png">
 		                <h4 class="product-name">7-Star Type C Cord</h4>
 		                <p class="product-description">Usb DataCable for Synchronizing and Fast Charging</p>
-		                <p class="product-price" value='11'>1500</p>
+		                <p class="product-category">Catg: accessories</p>
+		                <p class="product-price">1750</p>
 		                <button class="add-to-cart">BUY</button>
 		            </div>
 		            <div class="products" id="DoubleWiredGamepd">
-		                <img class="product-image pad-dwn-2" src="items/DoubleWiredGamepd.png">
+		                <img class="product-image" src="items/DoubleWiredGamepd.png">
 		                <h4 class="product-name">Double Wired Usb Game Pad</h4>
 		                <p class="product-description">Micro Kingdom Double Wired Usb Game Pad</p>
-		                <p class="product-price" value='77'>6500</p>
+		                <p class="product-category">Catg: accessories</p>
+		                <p class="product-price">9000</p>
 		                <button class="add-to-cart">BUY</button>
 		            </div>
 		            <!-- ===Show Case [8] Ends**=== -->
@@ -428,7 +478,8 @@
 		                <img class="product-image" src="items/fingerbattrey.png">
 		                <h4 class="product-name">Finger Battrey</h4>
 		                <p class="product-description">Duracell Finger Power Battrey</p>
-		                <p class="product-price" value='22'>700</p>
+		                <p class="product-category">Catg: accessories</p>
+		                <p class="product-price">900</p>
 		                <button class="add-to-cart">BUY</button>
 		            </div>
 
@@ -442,7 +493,7 @@
 		        </div>    
 		    </div>
 
-		    <div id='cart-wrapper' class="slider close">
+		    <div id='cart-wrapper' class="slider scroller close">
 		          <!-- container-flex -->
 		        <form id="cartForm" class="fmcontrol" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfrqwHW129YVUHP4Xq8hdyOElEX-xeoXO8Lm7GuvJI0wmM5_g/formResponse" target="hidden_iframe" onsubmit="submitted=true;" method="POST">
 		        	<!-- Form step [1] (cart) Starts -->
@@ -482,6 +533,9 @@
 	                    <div class="form-row">
 	                    	<div class="col-md-4 mb-3 form-ins-cont storeItem">
 	                    		<input type="text" id="storeItem" placeholder="Store" value="Store"  name="entry.1567565713" readonly>
+	                    	</div>
+	                    	<div class="col-md-4 mb-3 form-ins-cont storeItem">
+	                    		<input type="text" id="authority" placeholder="authority" value="Clautechzs" name="entry.1696031714" readonly>
 	                    	</div>
 	                        <div class="col-md-4 mb-3 form-ins-cont">
 	                            <label for="name">Name:</label>
@@ -535,11 +589,15 @@
 					<!-- Form step [3] Starts-->
 		            <div id="payment-options" style="display:none;">
 
-		            		<h3 style="color: #ff6600;">Payment Time: <span id="countdown">15m 0s</span></h3>
+		            		<div class="tmr">
+		            			<h3 style="color: #ff6600;">
+		            				Payment Time: <span id="countdown">15m 0s</span>
+		            			</h3>
+		            		</div>
 
 						    <!-- Bank Options -->
 						    <h4>Bank Transfer:</h4>
-						    <div>
+						    <div class="radioBox">
 							    <label>
 							        <input type="radio" class="bank-radio" name="bank" value="zenith" id="zenith">
 							        Zenith Bank
@@ -577,7 +635,7 @@
 						        <span style="margin-top: 16px; font-size: 13px; font-style: italic;">After the bank transfer, click on the <strong>"Notify Seller"</strong> button bellow</span>
 						    </div>
 
-						    <span style="margin-top: 16px; font-size: 13px; font-style: italic;"><strong>Note:</strong> You re to make your bank transfer within the count down set time. Your order will be cancel after the 15mins time out.</span>
+						    <span style="margin-top: 16px; font-size: 13px; font-style: italic;" class="note-msg"><strong>Note:</strong> You re to make your bank transfer within the count down set time. Your order will be cancel after the 15mins time out.</span>
 
 							<input type="text" id="productDetailsInput" name="entry.533724961" readonly>
 							<input type="number" id="inpTotal" name="entry.1873938647" readonly>
@@ -586,13 +644,20 @@
 							<!-- Credit Card Option -->
 							<div id="paystackButtons"> 
 								<h4>Pay with Credit Card</h4>
-								<label>
-									<input type="radio" class="payment-method" name="payment-method" value="credit-card" id="creditCard">
-									Pay with Credit Card<br>
+								<label class="creditBox">
+									<div>
+										<input type="radio" class="payment-method" name="payment-method" value="credit-card" id="creditCard">
+										Pay with Credit Card<br>
+									</div>
 									<!-- Credit Card Details: Initially Hidden -->
 									<div class="credit-card-details" style="display:none;">
-									    <button class="cardbtn" type="submit" id="paystackButton" onclick="payWithPaystack()">Click Here</button>
-									    <img src="img/creditcard.png" alt="Credit Card" class="thumbnail thumbnail-2">
+									    <button class="cardbtn" type="submit" id="paystackButton" onclick="payWithPaystack()">
+									    	Click Here
+									    </button>
+
+									    <div class="imgBtn">
+									    	<img src="img/creditcard.png" alt="Credit Card" class="thumbnail thumbnail-2">
+									    </div>
 									</div>
 								</label>
 							</div>
@@ -654,7 +719,7 @@
 									        <button  type="button" id="checkout">Checkout</button>
 									        <button  type="submit" id="notifyButton" class="cart-btns" style="display:none;">Notify Seller</button>
 									        <button  type="button" id="goBackButton" class="cart-btns"  style="display:none;" onclick="prevStep()">Go Back</button>
-									        <button  type="button" id="ks" class="keep-shopping">Keep Shopping</button>
+									        <button  type="button" id="ks" class="keep-shopping">Add items..</button>
 									        <button  type="button" id="cancelOrderButton" class="cart-btns cancel-hover"  style="display:none;" onclick="cancelOrder()">Cancel Order</button>
 									        <button  type="button" id="next" style="display:none;" class="" >Next</button>
 									        <button type="button" id="finalizeOrder" class="cart-btns" style="display:none;" onclick="redirectToHome()">Finalize Order</button>
@@ -672,7 +737,20 @@
 			    </form>
 			    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
 	        </div>
+	        <div id="contact-cta-section" class="contact-cta-section">
+			  <div class="wrapper-full">
+			    <div class="cta-wrapper">
+			      <div class="details-wrapper">
+			        <h2>Request for Specific Item or Services</h2>
+			        <p>Let us know the item your are looking for</p>
+			      </div>
+			      <a class="blue-cta-button" href="services/index.html">Click here</a>
+			      <div class="clearfix"></div>
+			    </div>
+			  </div>
+			</div>
 		</div>
+
 
 		<!-- ==Footer elements== -->
 		<div class="footer-main">
@@ -695,11 +773,11 @@
 					<span style="font-style:italic;">Note: This attachement is for failed or interrupted checkout</span>
 				</div>
 
-				<button class="open-button" onclick="openForm()">
+				<button class="open-button" onclick="window.location.href='https://confirmation-report.netlify.app/'">
 					<i class="fa fa-upload u" aria-hidden="true"></i>Upload
 				</button>
 
-				<div class="form-popup" id="myForm" style="background: rgb(209 207 207);">
+				<!-- <div class="form-popup" id="myForm" style="background: rgb(209 207 207);">
 					<form name="checkform" action="file/submission/success" method="POST" class="upform">
 					  <div class="form-container cancel-cont">
 							  <button type="button" style="" class="cancel" onclick="closeForm()">
@@ -719,7 +797,7 @@
 					  <div class="form-container">
 					    <label for="phone">Phone</label>
 					    <input type="phone" name="phone" id="upphone" class="form-set" required="required"/>
-					    <!-- <span>Write a short description</span> -->
+					    
 					  </div>
 					  <div class="form-container">
 					    <label for="Email">Email</label>
@@ -732,7 +810,7 @@
 					    <span></span>
 					  </div>
 					  <div class="form-container">
-                        <!-- bot detector -->
+                        
 			            <input type="checkbox" name="botcheck" 
 			           role="checkbox" name="botcheck" style="display: none;">
 			            <p style="display: none;">
@@ -740,7 +818,7 @@
 			                     <input id="bot-field" name="bot" />
 			                </label>
 			             </p>
-			             <!-- bot detector -->
+			            
 	                  </div>
 					  <div class="form-group file-pane">
 					    <label for="images">Select Image</label>
@@ -760,7 +838,8 @@
 					    <button type="submit">submit</button>
 					  </div>  
 					</form>
-			  	</div>
+			  	</div> -->
+
 			  </div>
 
 			  <hr class="line">
@@ -785,23 +864,26 @@
 			    </div>
 			  </div>
 
-
-			  <form class="form-inline">Get our store's update:
-			    <!-- <input type="text" class="form-control" size="50" placeholder="Email/Phone"> -->
-			    <input type="email" class="form-control" size="50" placeholder="Email Address">
-                    <!-- bot detector -->
-		            <input type="checkbox" name="botcheck" id="i19" 
-		           role="checkbox" name="entry.886154963_sentinel" style="display: none;">
-		            <p style="display: none;">
-		                <label>Checks
-		                     <input id="bot-field" name="entry.1581439038" />
-		                </label>
-		             </p>
-		             <!-- bot detector -->
-			    <button type="button" class="btn btn-danger">Sign Up</button>
-			  </form>
+			  <div id="fade">
+                <div id="icont" class="note-icon"></div>
+                <div id="subz" class="note"></div>
+              </div>
+              <div id="fadez">
+				  <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSesjCzzZcwcxjbjxcxXD0LPesmuNBY0GDx6-Jgxq3YQCA_t_A/formResponse" method="post" autocomplete="on" target="hidden_iframe" onsubmit="submitted=true;" class="form-inline" id="newsLetter">Get our store's update:
+				    <input type="email" name="entry.1871370545" class="form-control" size="50" placeholder="Email Address">
+	                    <!-- bot detector -->
+			            <p style="display: none;">
+			                <label>Checks
+			                     <input id="bot-field" name="entry.2068498293" />
+			                </label>
+			             </p>
+			             <!-- bot detector -->
+				    <button type="submit" class="btn btn-danger">Sign Up</button>
+				  </form>
+			  </div>
+			    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
 			   <div style="margin-top:30px; margin-bottom:-10px;">
-			   	  <p>© Copyright 2023 Clautechzs</p>
+			   	  <p>© Copyright 2024 Clautechzs</p>
 			   </div>  
 			</footer>
 		</div>
@@ -810,17 +892,36 @@
 	</div>
 
 
-
-
 <script src="dir/jquery/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $('#newsLetter').on('submit', function(e) {
+
+      $('#icont').append('<i class="bi bi-check-circle-fill"></i>');
+      $('#subz').prepend('Subscription <span style="color: #ff6600; font-weight: 600; font-size: 17px;"> Successful!</span>');
+      $('#fade *').fadeIn(3000);
+      $('#fadez *').fadeOut(1000);
+      // $('#fadez *').fadeIn(5000);
+
+      setTimeout(function() {
+           window.location.reload();
+        }, 5000);
+      });
+</script>
+
 <script src="dir/bootstrap-3.4/js/bootstrap.min.js"></script>
 <script src="js/index.js"></script>
+
 <script src="https://js.paystack.co/v1/inline.js"></script>
 
 
 <script type="text/javascript">var submitted=false;</script>
 
-<script type="text/javascript">
+<!-- CMS -->
+<script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+<script src="js/contentful-index.js"></script>
+
+<!-- <script type="text/javascript">
 
 	function openForm() {
 		  document.getElementById("myForm").style.display = "block";
@@ -830,29 +931,48 @@
 		  document.getElementById("myForm").style.display = "none";
 		}
 
+</script> -->
+
+<script type="text/javascript">
+		window.addEventListener("load", function() {
+		    var status = document.getElementById("status");
+		    var preloader = document.getElementById("preloader");
+
+		    // Fade out the loading animation
+		    status.style.opacity = 0;
+		    preloader.style.display = "none";
+
+
+		    // Delay and fade out the white DIV that covers the website
+		    setTimeout(function() {
+		        preloader.style.display = "none";
+		        status.style.opacity = 0;
+		    }, 1000);
+		});
+
 </script>
 
 <script>
 
         //Get the button
-    var mybutton = document.getElementById("myBtn");
+	    var mybutton = document.getElementById("myBtn");
 
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
+	    // When the user scrolls down 20px from the top of the document, show the button
+	    window.onscroll = function() {scrollFunction()};
 
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    }
+	    function scrollFunction() {
+	      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+	        mybutton.style.display = "block";
+	      } else {
+	        mybutton.style.display = "none";
+	      }
+	    }
 
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
+	    // When the user clicks on the button, scroll to the top of the document
+	    function topFunction() {
+	      document.body.scrollTop = 0;
+	      document.documentElement.scrollTop = 0;
+	    }
 </script>
 
 <script type="text/javascript">
@@ -891,6 +1011,68 @@
 
 
 </script>
+<script type="text/javascript">
+	
+
+	// Filter products by category
+	function filterProducts(category) {
+	    // Get all product elements
+	    var products = document.querySelectorAll('.products');
+	    
+	    products.forEach(function(product) {
+	        var productCategory = product.querySelector('.product-category').textContent.toLowerCase();
+	        
+	        // Check matches
+	        if (productCategory.includes(category)) {
+	            // If matches
+	            product.style.display = 'block';
+	        } else {
+	            // Else hide the product
+	            product.style.display = 'none';
+	        }
+	    });
+	}
+
+	// handle click on "Accessories" button
+	document.getElementById('accessories-btn').onclick = function() {
+	    filterProducts('accessories');
+	};
+
+	// handle click on "Store" button
+	document.getElementById('store-btn').onclick = function() {
+	    filterProducts('others');
+	};
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var accessoriesBtn = document.getElementById('accessories-btn');
+    var storeBtn = document.getElementById('store-btn');
+    
+    accessoriesBtn.addEventListener('click', function() {
+        closeNavbarMenuWithDelay();
+    });
+    
+    storeBtn.addEventListener('click', function() {
+        closeNavbarMenuWithDelay();
+    });
+    
+    function closeNavbarMenuWithDelay() {
+        setTimeout(function() {
+            closeNavbarMenu();
+        }, 2000); // Delay for 3 seconds (3000 milliseconds)
+    }
+    
+    function closeNavbarMenu() {
+        var navbarToggle = document.querySelector('.navbar-toggle');
+        if (navbarToggle.classList.contains('collapsed')) {
+            return; // Navbar menu is already closed
+        }
+        var navbarCollapse = document.getElementById('myNavbar');
+        navbarToggle.click(); // Simulate click to close navbar menu
+    }
+});
+</script>
+
 
 
 </body>

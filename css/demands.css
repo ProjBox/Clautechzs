@@ -427,10 +427,13 @@ select option {
 
 .homebtn {
         
-        line-height: 28px;
+        line-height: 0;
         font-size:15px;
+
+        padding: 10px;
         
         }
+
 @media only screen and (max-width: 420px) { 
 
     .homebtn {
@@ -683,31 +686,7 @@ big{
   z-index: 99999999;
 }
 
-/*#pelogo{
-  display: block;
-  position: absolute;
-  left: 2vh;
-  top: 2vh;
-  width: 27vh;
-  height: 30vh;
-  background: transparent;
 
-  background: -moz-linear-gradient(-45deg, #34324b 0%, #161222 100%);
-  background: -webkit-linear-gradient(-45deg, #34324b 0%,#161222 100%);
-  background: linear-gradient(135deg, #34324b 0%,#161222 100%);
-
-  background-size: contain;
-  font-family: Trebuchet MS, sans-serif;
-  font-size: 5.5vh;
-  font-weight: bold;
-  color: #251071;
-  text-align: center;
-  line-height: 8vh;
-
-  background: -moz-linear-gradient transparent;
-  background: -webkit-linear-gradient transparent;
-  background: linear-gradient transparent;
-}*/
 
 #pelogo{
   display: block;
@@ -717,9 +696,7 @@ big{
   width: 19vh;
   height: 20vh;
   background: transparent;
-  /*background: -moz-linear-gradient(-45deg, #34324b 0%, #161222 100%);
-  background: -webkit-linear-gradient(-45deg, #34324b 0%,#161222 100%);
-  background: linear-gradient(135deg, #34324b 0%,#161222 100%);*/
+  
   background-size: contain;
   font-family: Trebuchet MS, sans-serif;
   font-size: 2.22vh;
@@ -864,7 +841,7 @@ big{
 
  .content-main{
 
-    padding: 10px;
+    padding: 0;
  }
 
 .cont-serv{
@@ -955,6 +932,7 @@ hr:not([size]) {
 .product-name{
 
     font-size: 15px !important;
+    margin-top: 14px;
 }
 
 .product-price {
@@ -999,6 +977,12 @@ hr:not([size]) {
 
 #demandItem{
 
+    display: none;
+    border: 1px solid #ff66008f;
+    border-radius: 2px;
+    color: #ff6600;
+}
+#authority {
     display: none;
     border: 1px solid #ff66008f;
     border-radius: 2px;
@@ -1133,4 +1117,138 @@ hr:not([size]) {
             margin-left: 6px;
         }
   
+}
+/*imported from index css*/
+  @media screen and (max-width: 600px) {
+            
+            .products img {
+              padding: 0 !important;
+              background: #ffffff61;
+            }
+
+        }
+
+
+
+
+/*New Loader*/
+
+.loading-spinner {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%,-50%) translateZ(0);
+    top: 50%;
+    width: 90px;
+    height: 90px;
+    z-index: 1;
+    background: url('../img/logo-orange.png') center no-repeat;
+    background-size: contain;
+      /*animation: spinning 1.5s infinite ease-in-out;*/
+
+    z-index: 99999999;
+}
+
+.loading-spinner:after {
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    background-color:rgba(0,0,0,0);
+    border-radius:100%;
+    margin:-15px;
+    box-shadow: 0 4px 0 0 #ff6600;
+    transition: all 1s linear;
+    animation: lds-eclipse 1s linear infinite;
+}
+
+
+
+@keyframes spinning {
+    0% { transform: translate(-50%,-50%) scale(1) translateZ(0);}
+    50% { transform: translate(-50%,-50%) scale(1.1) translateZ(0);}
+    100% { transform: translate(-50%,-50%) scale(1) translateZ(0);}
+}
+
+@keyframes lds-eclipse {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+@media only screen and (max-width: 600px){
+
+    .loading-spinner {
+   
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+
+    z-index: 99999999;
+}
+
+.loading-spinner:after {
+   
+        width:85px;
+        height:85px;
+        
+    }
+
+
+}
+
+
+
+/*==Form and Wrapper scroll bar==*/
+/* Hide the default scrollbar */
+.scroller {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+
+  /*border-left: 5px solid #9696ff;
+  border-bottom: 5px solid #9696ff;
+
+  background: #ffffff;*/
+}
+
+/* WebKit browsers like Safari and Chrome */
+.scroller::-webkit-scrollbar {
+  width: 11px;
+}
+
+.scroller::-webkit-scrollbar-track {
+  background: transparent;
+
+  margin-top: 390px;
+  margin-bottom: 30px;
+}
+
+.scroller::-webkit-scrollbar-thumb {
+  /*background: #ff6600;*/
+  background-color: #ff660087;
+  border-radius: 3px;
+}
+
+/* Hover effect */
+.scroller::-webkit-scrollbar-thumb:hover {
+  /*background-color: #ff660087;*/
+  background: #ff6600;
+}
+
+@media only screen and (max-width: 600px){
+
+   /* WebKit browsers like Safari and Chrome */
+    .scroller::-webkit-scrollbar {
+      width: 5px;
+    }
+
 }

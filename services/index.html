@@ -59,7 +59,7 @@
 </head>
 <body>
 
-<div  onload="preloader()">
+<!-- <div  onload="preloader()">
 
         <div id="backgroundLoader"></div>
         <div id="logocontainer">
@@ -69,32 +69,39 @@
           <div class="loader" style="right:0.2vh; bottom:0; height:0.2vh; width:0; animation:slide3 1s linear forwards infinite"></div>
           <div class="loader" style="left:0; bottom:0.2vh; width:0.2vh; height:0; animation:slide4 1s linear forwards infinite; animation-delay:0.5s"></div>
         </div>
+</div> -->
+<div id="loadz" onload="preloader()" >
+	<div id="backgroundLoader"></div>
+	<div class="loading-spinner" id="loading-spinner">
+	</div>
 </div>
+
 <!-- loader -->
 
 <div  id="siteMain0" class="container">
-	<!-- ==Close Button== -->
+<!-- ==Close Button== -->
 	<div class="row">
 		<div style="
 	     display: inline-flex;
 	     flex-direction: row;
-	     margin-top: 35px;
-         margin-bottom: -35px;" class="closebtn">
+	     margin-top: 45px;
+         margin-bottom: 0;" class="closebtn">
          	<a href="../index.html">
 		      <button onclick="history.back()"
 		       style=" background: #ff6600; outline: none;
 		       border: none; color: #ffffff;
                border-radius: 5px;"
                class="homebtn">
-		        <i class="fa fa-angle-double-left"
+		        <!-- <i class="fa fa-angle-double-left"
 		         style="font-size:17px; position: static; margin:0;">
-		        </i>
-		        Home
+		        </i> -->
+		        <i style="font-size:22px; position: static; margin:0;" class="fa fa-home" aria-hidden="true"></i>
 		      </button>
 		    </a>
 		</div>
 	</div>
 </div>
+
 <!-- ==Main Cont / Preloader Cont== -->
 <div id="siteMain" class="siteMain">
 
@@ -181,7 +188,7 @@
 		                                        <div class="form-icon"><i class="fa fa-envelope"></i></div>
 		                                    </div>
 		                                </div>
-
+		                                
 		                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 					                        <!-- bot detector -->
 								            <input type="checkbox" name="botcheck" id="i19" 
@@ -192,6 +199,15 @@
 								                </label>
 								             </p>
 								             <!-- bot detector -->
+						                  </div>
+						                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					                        <!-- Authority -->
+								            <p style="display: none;">
+								                <label>Authority
+								                     <input id="bot-field" name="entry.740497844" />
+								                </label>
+								             </p>
+								             <!-- Authority -->
 						                  </div>
 		                                
 		                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" >
@@ -255,7 +271,7 @@
 				                <img class="product-image" src="../items/gamepad.png">
 				                <h4 class="product-name">Wireless Twin GamePad</h4>
 				                <p class="product-description">Usb Twin Wirelees Vibration Controller</p>
-				                <p class="product-price" value='999'>12000</p>
+				                <p class="product-price">10200</p>
 				                <button class="add-to-cart" id='test'>BUY</button>
 				            </div>
 
@@ -263,7 +279,7 @@
 				                <img class="product-image" src="../items/wirelessmouse.png">
 				                <h4 class="product-name">Wireless Mouse</h4>
 				                <p class="product-description">Usb wireless Mouse</p>
-				                <p class="product-price" value='876'>3000</p>
+				                <p class="product-price">3600</p>
 				                <button class="add-to-cart">BUY</button>
 				            </div>
 
@@ -271,15 +287,15 @@
 				                <img class="product-image" src="../items/oraimoPowerBank2.png">
 				                <h4 class="product-name">Oraimo Power Bank</h4>
 				                <p class="product-description">20000mah Oraimo Power Bank</p>
-				                <p class="product-price" value='77'>15000</p>
+				                <p class="product-price">Awaiting..</p>
 				                <button class="add-to-cart">BUY</button>
 				            </div>
 
 				            <div class="products" id="XboxSingleGamepd">
-				                <img class="product-image pad-dwn-2" src="../items/XboxSingleGamepd.png">
+				                <img class="product-image" src="../items/XboxSingleGamepd.png">
 				                <h4 class="product-name">Xbox Game Pad</h4>
 				                <p class="product-description">Single Xbox Game Pad. Xbox Arch</p>
-				                <p class="product-price" value='55'>12000</p>
+				                <p class="product-price">13200</p>
 				                <button class="add-to-cart">BUY</button>
 				            </div>
 				            <!-- === +ADD ITEMS === -->
@@ -288,7 +304,7 @@
 		        </div>    
 		    </div>
 		    <!-- ==Cart elements== -->
-		    <div id='cart-wrapper' class="slider close">
+		    <div id='cart-wrapper' class="slider close scroller">
 		            <!-- container-flex -->
 		        <form id="cartForm" class="fmcontrol" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfrqwHW129YVUHP4Xq8hdyOElEX-xeoXO8Lm7GuvJI0wmM5_g/formResponse" target="hidden_iframe" onsubmit="submitted=true;" method="POST">
 		        	<!-- Form step [1] (cart) Starts -->
@@ -328,6 +344,7 @@
 	                    <div class="form-row">
 	                    	<div class="col-md-4 mb-3 form-ins-cont demandItem">
 	                    		<input type="text" id="demandItem" placeholder="Demands" value="Demands" name="entry.1567565713" readonly>
+	                    		<input type="text" id="authority" placeholder="authority" value="Clautechzs" name="entry.1696031714" readonly>
 	                    	</div>
 	                        <div class="col-md-4 mb-3 form-ins-cont">
 	                            <label for="name">Name:</label>
@@ -382,11 +399,17 @@
 					<!-- Form step [3] Starts-->
 		            <div id="payment-options" style="display:none;">
 
-		            		<h3 style="color: #ff6600;">Payment Time: <span id="countdown">15m 0s</span></h3>
+		            		<!-- <h3 style="color: #ff6600;">Payment Time: <span id="countdown">15m 0s</span></h3> -->
+
+		            		<div class="tmr">
+		            			<h3 style="color: #ff6600;">
+		            				Payment Time: <span id="countdown">15m 0s</span>
+		            			</h3>
+		            		</div>
 
 						    <!-- Bank Options -->
 						    <h4>Bank Transfer:</h4>
-						    <div>
+						    <div class="radioBox">
 							    <label>
 							        <input type="radio" class="bank-radio" name="bank" value="zenith" id="zenith">
 							        Zenith Bank
@@ -424,7 +447,7 @@
 						        <span style="margin-top: 16px; font-size: 13px; font-style: italic;">After the bank transfer, click on the <strong>"Notify Seller"</strong> button bellow</span>
 						    </div>
 
-						    <span style="margin-top: 16px; font-size: 13px; font-style: italic;"><strong>Note:</strong> You re to make your bank transfer within the count down set time. Your order will be cancel after the 15mins time out.</span>
+						    <span style="margin-top: 16px; font-size: 13px; font-style: italic;" class="note-msg"><strong>Note:</strong> You re to make your bank transfer within the count down set time. Your order will be cancel after the 15mins time out.</span>
 
 							<input type="text" id="productDetailsInput" name="entry.533724961" readonly>
 							<input type="number" id="inpTotal" name="entry.1873938647" readonly>
@@ -433,7 +456,7 @@
 							<!-- Credit Card Option -->
 							<div id="paystackButtons"> 
 								<h4>Pay with Credit Card</h4>
-								<label>
+								<label class="creditBox">
 									<input type="radio" class="payment-method" name="payment-method" value="credit-card" id="creditCard">
 									Pay with Credit Card<br>
 									<!-- Credit Card Details: Initially Hidden -->
@@ -499,7 +522,7 @@
 									        <button  type="button" id="checkout">Checkout</button>
 									        <button  type="submit" id="notifyButton" class="cart-btns" style="display:none;">Notify Seller</button>
 									        <button  type="button" id="goBackButton" class="cart-btns"  style="display:none;" onclick="prevStep()">Go Back</button>
-									        <button  type="button" id="ks" class="keep-shopping">Keep Shopping</button>
+									        <button  type="button" id="ks" class="keep-shopping">Add items..</button>
 									        <button  type="button" id="cancelOrderButton" class="cart-btns cancel-hover"  style="display:none;" onclick="cancelOrder()">Cancel Order</button>
 									        <button  type="button" id="next" style="display:none;" class="" >Next</button>
 									        <button type="button" id="finalizeOrder" class="cart-btns" style="display:none;" onclick="redirectToHome()">Finalize Order</button>
@@ -539,6 +562,12 @@
 <script src="../dir/bootstrap-3.4/js/bootstrap.min.js"></script>
 <script src="../js/index.js"></script>
 <script src="https://js.paystack.co/v1/inline.js"></script>
+
+
+<!-- CMS -->
+ <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+ <script src="../JS/contentful-services.js"></script>
+
 <script type="text/javascript">
     
     var full=false;
@@ -551,19 +580,21 @@
 </script>
 
 <script>
-    function preloader() {
-  document.getElementById("logocontainer").style.display = "block";
-  document.getElementById("siteMain").style.display = "none";
-  document.getElementById("siteMain0").style.display = "none";
-  
-}
+		function preloader() {
+		  document.getElementById("backgroundLoader").style.display ="block";
+		  document.getElementById("loadz").style.display ="block";
+		  document.getElementById("loading-spinner").style.display ="block";
+		  document.getElementById("siteMain").style.display = "none";
+		  document.getElementById("siteMain0").style.display = "none";
+		}
 </script>
 <script>
     setTimeout(function(){ 
         document.getElementById('siteMain').style['display'] = 'block';
         document.getElementById('siteMain0').style['display'] = 'block';
-        document.getElementById('logocontainer').style['display'] = 'none';
-        document.getElementById('backgroundLoader').style['display'] = 'none';
+        document.getElementById("backgroundLoader").style.display ="block";
+        document.getElementById('loading-spinner').style['display'] = 'none';
+         document.getElementById('loadz').style['display'] = 'none';
     }, 2000);
 </script>
  
