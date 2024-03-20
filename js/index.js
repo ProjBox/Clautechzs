@@ -248,8 +248,12 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Image Row:", imgRow); // Log the image row
         if (imgRow) {
             imgRow.remove();
+            updateSubtotal();
+            updateTotal();
         } else {
             console.log("Image row not found!"); // Log if image row not found
+            updateSubtotal();
+            updateTotal();
         }
 
         // Update added items list
