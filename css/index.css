@@ -631,6 +631,8 @@
             height: auto;
             margin-right: 10px;
 
+            padding: 0 !important;
+
 
             border: 1px solid #ff660052 !important;
             background: #ff66008c;
