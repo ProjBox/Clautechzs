@@ -36,6 +36,8 @@ h2 {
 
 h3 {
     font-size: 18px;
+
+    color: #3f3f3fe0;
 }
 
 h4 {
@@ -141,6 +143,7 @@ sub {
 
 .i-tag{
     text-align: center;
+    color: #3f3f3fe0;
 }
 
 .i-pad{
@@ -405,7 +408,8 @@ select option {
 
     border-radius: 5px;
 
-    box-shadow: 0px 7px 8px 3px rgb(0 0 0 / 37%);
+    /*box-shadow: 0px 7px 8px 3px rgb(0 0 0 / 37%);*/
+    box-shadow: rgb(0 0 0 / 42%) 0px 3px 4px !important;
 }
 
 .btn-default:hover {

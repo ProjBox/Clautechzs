@@ -77,6 +77,8 @@
   border: none;
   /*background: #f1f1f1;*/
   border-radius: 4px;
+
+  box-shadow: rgba(0,0,0,.24) 0px 3px 4px;
 }
 
 textarea {
@@ -289,6 +291,10 @@ textarea {
 }
 
 
+.subinput {
+
+  box-shadow: rgba(0,0,0,.24) 0px 3px 4px;
+}
 
 @media only screen and (max-width: 550px){
 .form-popup {

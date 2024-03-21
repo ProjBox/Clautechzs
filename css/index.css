@@ -187,6 +187,11 @@
             margin-top: -7.5px
         
         }
+        .product-name{
+
+            color: #424242f0;
+            font-weight: bold;
+        }
         .product-description{
 
             font-weight: 600;
@@ -390,7 +395,7 @@
             height: 100vh;
             top: 0;
             overflow: scroll;
-            background: white;
+            background: #e3e3e3;
             transition: all 0.3s;
             padding: 20px 0px 20px 0px;
             z-index: 9999;
@@ -409,9 +414,9 @@
         }
 
         #cart-amount-wrapper {
-            background: white;
+            background: #e3e3e3;
             padding: 1.5% 0 .5% 35%;
-            border-radius: 10px;
+            /*border-radius: 10px;*/
 
             display: flex;
             flex-wrap: wrap;
@@ -641,14 +646,14 @@
             #cart-table-header {
 
             background: #ff6600;
-            color: white;
+            color: #e3e3e3;
             margin-bottom: 10px;
 
             /*border-radius: 5px !important;*/
             padding: 10px 5px !important;
 
             box-shadow: rgb(255 102 0 / 72%) -6px -6px 0px;
-            border: 2px solid;
+            border: 0.5px solid;
             }
         }
 
@@ -1797,7 +1802,7 @@
 
 
             h4 {
-                font-size: 14.5px !important;
+                font-size: 15.5px !important;
                 font-weight: 600;
             }
 
@@ -2336,7 +2341,7 @@ width: 120px;
 .payment-calltext h4{
 
     
-    color: #c1c1c1;
+    color: #aeaeae;
     margin-bottom: 0px;
     box-shadow: rgba(0,0,0,.24) 1px 2px 5px 0px;
     padding: 5px 6.5px;
