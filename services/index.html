@@ -112,10 +112,16 @@
 		<div class="content-main">
 			<div class="serv-main">
 		        
-		        <button id='cart-button' class="trigger cart-button-style">
+		        <!-- <button id='cart-button' class="trigger cart-button-style">
 		        	<span class="glyphicon glyphicon-shopping-cart"></span>
 		        	Cart
-		        </button>
+		        </button> -->
+
+		         <button id='cart-button' class="trigger cart-button-style">
+		        	<span class="glyphicon glyphicon-shopping-cart"></span>
+		        	<span id="cart-text">Cart</span>
+		        	<span id="addNo"></span>
+		         </button>
 		        
 		        
 		        <div class="cont-serv">
@@ -287,7 +293,7 @@
 				                <img class="product-image" src="../items/oraimoPowerBank2.png">
 				                <h4 class="product-name">Oraimo Power Bank</h4>
 				                <p class="product-description">20000mah Oraimo Power Bank</p>
-				                <p class="product-price">Pending..</p>
+				                <p class="product-price">Not Available</p>
 				                <button class="add-to-cart">BUY</button>
 				            </div>
 
@@ -399,7 +405,9 @@
 					<!-- Form step [3] Starts-->
 		            <div id="payment-options" style="display:none;">
 
-		            		<!-- <h3 style="color: #ff6600;">Payment Time: <span id="countdown">15m 0s</span></h3> -->
+		            		<div class="payment-calltext">
+		            			<h4>Choose Payment Option</h4>
+		            		</div>
 
 		            		<div class="tmr">
 		            			<h3 style="color: #ff6600;">
@@ -455,7 +463,7 @@
 
 							<!-- Credit Card Option -->
 							<div id="paystackButtons"> 
-								<h4>Pay with Credit Card</h4>
+								<h4>Credit Card</h4>
 								<label class="creditBox">
 									<input type="radio" class="payment-method" name="payment-method" value="credit-card" id="creditCard">
 									Pay with Credit Card<br>
@@ -557,7 +565,7 @@
 <!-- preloader end div -->
 </div>
 
-
+ 
 <script src="../dir/jquery/jquery.min.js"></script>
 <script src="../dir/bootstrap-3.4/js/bootstrap.min.js"></script>
 <script src="../js/index.js"></script>
