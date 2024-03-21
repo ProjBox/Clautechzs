@@ -648,7 +648,7 @@
             padding: 10px 5px !important;
 
             box-shadow: rgb(255 102 0 / 72%) -6px -6px 0px;
-            border: 1px solid;
+            border: 2px solid;
             }
         }
 
@@ -955,6 +955,11 @@
             transition: ease-in .5s;
             transition: background .5s;
             border-radius: 5px;
+        }
+
+        #creditCard {
+
+            margin-left: 6px;
         }
 
 
