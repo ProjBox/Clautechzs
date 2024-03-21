@@ -547,3 +547,65 @@ bankRadios.forEach(function(radio) {
 });
 
 
+
+// CART COUNT
+// Add this function to update the cart count
+function updateCartCount() {
+    const cartCount = document.getElementById('cart-count');
+    if (cartCount) {
+        cartCount.textContent = cart.items.length; // Assuming 'cart' is your cart object
+    }
+}
+
+// Call updateCartCount function after adding an item to the cart
+function addToCart(event) {
+    // Your existing addToCart function code...
+
+    // Add the following line at the end of the function to update the cart count
+    updateCartCount();
+}
+
+// Call updateCartCount function after removing an item from the cart
+function removeFromCart(event) {
+    // Your existing removeFromCart function code...
+
+    // Add the following line at the end of the function to update the cart count
+    updateCartCount();
+}
+
+// Call updateCartCount function initially to set the cart count
+updateCartCount();
+
+
+// function to update the cart count and visibility
+function updateCartCount() {
+    const cartCount = document.getElementById('addNo');
+    const cartText = document.getElementById('cart-text');
+
+    if (cartCount) {
+        cartCount.textContent = cart.items.length; // Assuming 'cart' is your cart object
+    }
+
+    if (cart.items.length > 0) {
+        // Show the "Cart" text and count
+        cartText.style.display = 'inline'; 
+        cartCount.style.display = 'inline'; 
+    } else {
+        // Hide the "Cart" text and count
+        cartText.style.display = 'none'; 
+        cartCount.style.display = 'none'; 
+    }
+}
+
+
+// #addNo {
+//     padding: 2px 4px;
+//     border-radius: 5px;
+//     font-weight: 600;
+//     /* Apply the color only when there is content */
+// }
+
+// #addNo:not(:empty) {
+//     color: #ffffff;
+//     /* Add any additional styles specific to the count element when it's not empty */
+// }

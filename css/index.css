@@ -158,6 +158,25 @@
             color: white;
         }
 
+
+        /*SPECIAL STYLE CSS*/
+       #addNo {
+            
+            padding: 0;
+            margin: 0;
+        }
+
+        #addNo:not(:empty) {
+            color: #ff6600;
+            padding: 3px 6px;
+            border-radius: 100px;
+            font-weight: 600;
+            /*border: 2px solid;*/
+            background: white;
+            
+        }
+
+
         .product-category{
 
             color: #b9b9b9;
@@ -167,6 +186,11 @@
             font-weight: 600; 
             margin-top: -7.5px
         
+        }
+        .product-description{
+
+            font-weight: 600;
+            color: #363d46ab;
         }
 
         .products {
@@ -634,10 +658,15 @@
             padding: 0 !important;
 
 
-            border: 1px solid #ff660052 !important;
-            background: #ff66008c;
+            /*border: none !important;*/
+            /*background: #ff66008c;*/
+            /*border: none !important;*/
 
             box-shadow: 4px 5px 5px 0px #ad4703;
+
+            background: #f1f1f18c;
+            border: none !important;
+            /*box-shadow: 4px 5px 5px 0px #e2e2e2;*/
         }
 
         @media (max-width: 495px){
@@ -691,6 +720,8 @@
             border-radius: 4px;
 
             background: #ffffff;
+
+            box-shadow: #75300266 0px 3px 4px;
         }
 
         #storeItem{
@@ -746,11 +777,15 @@
         font-weight: 400;
         line-height: 1.5;
         color: #01124a;
-        background-color: #fff;
+        /*background-color: #fff;*/
+        background-color: #f4f4f487;
         background-clip: padding-box;
-        border: 1px solid #ced4da;
+        /*border: 1px solid #ced4da;*/
         border-radius: 0.25rem;
         transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+        box-shadow: rgba(0,0,0,.24) 0px 3px 4px;
+        border: none;
         }
 
         .form-control-2:hover{
@@ -783,16 +818,20 @@
         .quantity-value {
            width: 55px !important;
            /*border: 2px solid #01124a57;*/
-           border: 1px solid #ff660070;
+           /*border: 1px solid #ff660070;*/
            border-radius: 5.5px;
 
-           color: #ff6600;
+           color: #fff;
+           font-weight: 600;
+           border: none;
+
+           padding: 3px 5px;
 
            /*box-shadow: -1px 1px 2px 1px rgb(255 102 0);*/
 
            box-shadow: -1px 1px 2px 1px rgb(204 83 3);
 
-           background: #ffab7352;
+           background: #ff6600a8;
         }
 
         .quantity-value:hover {
@@ -2474,7 +2513,7 @@ text-align: center;
     .cta-wrapper .details-wrapper {
         float: none;
         width: 90%;
-        }
+    }
 
         
 
@@ -2506,3 +2545,5 @@ text-align: center;
 
 
     }
+
+    /*FILTER BUTTON*/

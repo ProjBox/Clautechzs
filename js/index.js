@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const cartTableBody = document.getElementById('cart-table-body');
         const subtotal = document.getElementById('subtotal');
         const total = document.getElementById('total');
+        let totalQuantity = 0;
 
         // const productIdToImageMap = {};
 
@@ -114,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
         /*__==Product Cart Control==__*/
         /*__=============================__*/
 
-        function addToCart(event) {
+    function addToCart(event) {
 
             if (added.includes(event.target.parentElement.id)) {
                 duplicateId = '#' + event.target.parentElement.id;
@@ -222,16 +223,29 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('subtotal').style.display = 'block'; 
             document.getElementById('total').style.display = 'block'; 
 
+
+            // Call the function to update Cart Count
+            updateCartCount();
+
+            // // Increment the total quantity by 1 for each product added
+            // totalQuantity++;
+
+            // // Update the cart button to display the total quantity
+            // document.getElementById('addNo').innerText = `(${totalQuantity})`;
+
             // Update details after increasing quantity
             updateQuantity(event.target);
             updateSubtotal();
             updateTotal();
             populateProductDetailsInput();
 
+            // Call the function to update the total quantity
+            updateTotalQuantity();
+
         }
 
         /*==Cart Remove Controls==*/
-        function removeFromCart(event) {
+    function removeFromCart(event) {
 
        let parentRow = event.target.closest('tr');
         if (!parentRow) return;
@@ -250,10 +264,17 @@ document.addEventListener("DOMContentLoaded", function() {
             imgRow.remove();
             updateSubtotal();
             updateTotal();
+
+            // Call the function to update Cart Count
+            updateCartCount();
+
         } else {
             console.log("Image row not found!"); // Log if image row not found
             updateSubtotal();
             updateTotal();
+
+            // Call the function to update Cart Count
+            updateCartCount();
         }
 
         // Update added items list
@@ -264,6 +285,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Update cart items list
         cart.items = cart.items.filter(item => item.product !== productId);
+
+        // Call the function to update Cart Count
+        updateCartCount();
+
+
+        // Update the quantity of the removed item
+        // let removedItemId = event.target.parentElement.id;
+        // let removedItem = cart.items.find(item => item.product === removedItemId);
+        
+        // if (removedItem) {
+        //     // Decrement the total quantity by the quantity of the removed item
+        //     if (!isNaN(removedItem.quantity) && Number.isInteger(removedItem.quantity)) {
+        //         totalQuantity -= removedItem.quantity;
+        //     }
+            
+        //     // Update the cart button to display the updated total quantity
+        //     document.getElementById('addNo').innerText = `(${totalQuantity})`;
+        // }
+
+        // Decrement the total quantity by 1 when an item is removed
 
             // let parentBody = parentRow.parentNode;
             // let parentRowId = parentRow.id;
@@ -318,7 +359,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     updateTotal();
                     populateProductDetailsInput()
 
-            });
+        });
 
 
             // //*Remove the thumbnail*
@@ -352,6 +393,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 cartWrapper.classList.add('close'); // Close the cart
                 location.reload(); // Refresh the page
                 }
+
+                 // Call the function to update Cart Count
+                 updateCartCount();
 
              }
 
@@ -477,6 +521,43 @@ document.addEventListener("DOMContentLoaded", function() {
 
     
      }
+
+
+        // function to update the cart count
+        function updateCartCount() {
+            const cartCount = document.getElementById('addNo');
+            const cartText = document.getElementById('cart-text');
+
+            if (cartCount) {
+                cartCount.textContent = cart.items.length; // cart object
+            }
+
+            if (cart.items.length > 0) {
+                // Show the "Cart" text and count
+                cartText.style.display = 'none'; 
+                // cartCount.style.display = 'inline'; 
+            } else {
+                // Hide the "Cart" text and count
+                cartText.style.display = 'none'; 
+                // cartCount.style.display = 'none'; 
+            }
+        }
+
+
+        // function updateTotalQuantity() {
+        //     let updatedTotalQuantity = 0;
+
+        //     // let totalQuantity = 0;
+
+        //     for (let item of cart.items) {
+        //         if (!isNaN(item.quantity) && Number.isInteger(item.quantity)) {
+        //             totalQuantity += item.quantity;
+        //         }
+        //     }
+
+        //     // Update the cart button to display the updated total quantity
+        //     document.getElementById('addNo').innerText = `(${totalQuantity})`;
+        // }
 
 
         //*Fill the second form*
