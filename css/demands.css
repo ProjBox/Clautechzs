@@ -960,7 +960,7 @@ hr:not([size]) {
 
     font-size: 12px;
 
-    border-top: 1px solid #ff6600cc;
+    border-top: 6px solid #ff6600cc;
 }
 
 .add-to-cart {
