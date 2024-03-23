@@ -769,16 +769,35 @@
 		<div class="footer-main">
 			<footer class="container-fluid text-center">
 				 <!-- **Scroll to Top Button** -->
-    			 <button onclick="topFunction()" id="myBtn" title="Go to top">
-    			 	<i class="fa fa-arrow-circle-o-up scrlup">
-			        </i>
+    			 <button onclick="topFunction()" id="myBtn" class="myBtn" title="Go to top">
+    			 	<!-- <i class="fa fa-arrow-circle-o-up scrlup"></i> -->
+    			 	<i class="fa fa-angle-up scrllup"></i>
 			    </button>
 			</footer>	
 		</div>
-		
-		<!-- Filter Button -->
-		
 
+ 		<div class="action" onclick="actionToggle();">
+		    <span>+</span>
+		    <span>
+		    	<i class="fa fa-filter" aria-hidden="true"></i>
+		    </span>
+		    <ul>
+		        <li>Filter Products</li>
+		        <li>
+		            <button id="accessoriesFf-btn" class="filter-btn">Accessories</button>
+		            <div class="checkFf-icon" id="accessories-check-icon">
+		                <i class="fa fa-check-circle d" aria-hidden="true"></i>
+		            </div>
+		        </li>
+		        <li>
+		            <button id="storeFf-btn" class="filter-btn">Others</button>
+		            <div class="checkFf-icon" id="store-check-icon">
+		                <i class="fa fa-check-circle d" aria-hidden="true"></i>
+		            </div>
+		        </li>
+		    </ul>
+		</div>
+				
 		
 		<div class="footer-main">
 			<footer class="container-fluid text-center">
@@ -792,69 +811,6 @@
 				<button class="open-button" onclick="window.location.href='https://confirmation-report.netlify.app/'">
 					<i class="fa fa-upload u" aria-hidden="true"></i>Upload
 				</button>
-
-				<!-- <div class="form-popup" id="myForm" style="background: rgb(209 207 207);">
-					<form name="checkform" action="file/submission/success" method="POST" class="upform">
-					  <div class="form-container cancel-cont">
-							  <button type="button" style="" class="cancel" onclick="closeForm()">
-							  X
-							  </button>
-					  </div>
-
-					  <h4 style="margin-left: 12px;">
-					  	Attach and Submit your <strong>Evidence of payment</strong> here
-					  </h4>
-					  
-					  <div class="form-container">
-					    <label for="name">Name</label>
-					    <input type="text" name="name" id="upname" class="form-set"/>
-					    <span></span>
-					  </div>
-					  <div class="form-container">
-					    <label for="phone">Phone</label>
-					    <input type="phone" name="phone" id="upphone" class="form-set" required="required"/>
-					    
-					  </div>
-					  <div class="form-container">
-					    <label for="Email">Email</label>
-					    <input type="Email" name="email" id="upmail" class="form-set"/>
-					    <span></span>
-					  </div>
-					  <div class="form-container">
-					    <label for="order">Order/Receipt No</label>
-					    <input type="text" name="orderNo" id="upoder" class="form-set"/>
-					    <span></span>
-					  </div>
-					  <div class="form-container">
-                        
-			            <input type="checkbox" name="botcheck" 
-			           role="checkbox" name="botcheck" style="display: none;">
-			            <p style="display: none;">
-			                <label>Checks
-			                     <input id="bot-field" name="bot" />
-			                </label>
-			             </p>
-			            
-	                  </div>
-					  <div class="form-group file-pane">
-					    <label for="images">Select Image</label>
-					    <input type="file" name="file" id="upimages" required="required"/>
-					    <div class="file-kick">
-					      <div class="default"><p>Please upload image file of jpg, jpeg, png extension</p></div>
-					    </div>
-					    <span>Max file size is 1.5MB</span>
-					    <span></span>
-					  </div>
-					  <div class="form-container">
-					  	<label>Your Message:</label>
-						<textarea id="upmsg" class="form-set" rows="4" cols="50" placeholder="Type your message here..." name="message"></textarea>
-					  </div>
-
-					  <div class="form-container">
-					    <button type="submit">submit</button>
-					  </div>  
-					</form>
-			  	</div> -->
 
 			  </div>
 
@@ -940,18 +896,6 @@
 <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
 <script src="js/contentful-index.js"></script>
 
-<!-- <script type="text/javascript">
-
-	function openForm() {
-		  document.getElementById("myForm").style.display = "block";
-		}
-
-		function closeForm() {
-		  document.getElementById("myForm").style.display = "none";
-		}
-
-</script> -->
-
 <script type="text/javascript">
 		window.addEventListener("load", function() {
 		    var status = document.getElementById("status");
@@ -1030,8 +974,7 @@
 
 
 </script>
-<script type="text/javascript">
-	
+<script type="text/javascript">	
 
 	// Filter products by category
 	function filterProducts(category) {
@@ -1044,7 +987,7 @@
 	        // Check matches
 	        if (productCategory.includes(category)) {
 	            // If matches
-	            product.style.display = 'block';
+	            product.style.display = 'grid';
 	        } else {
 	            // Else hide the product
 	            product.style.display = 'none';
@@ -1062,34 +1005,94 @@
 	    filterProducts('others');
 	};
 </script>
+
+<script type="text/javascript">
+    // Function to toggle action container
+    function actionToggle() {
+        const action = document.querySelector('.action');
+        action.classList.toggle('active');
+    }
+
+    // Filter products by category
+    function filterProducts(category) {
+        var products = document.querySelectorAll('.products');
+        
+        products.forEach(function(product) {
+            var productCategory = product.querySelector('.product-category').textContent.toLowerCase();
+            
+            if (productCategory.includes(category)) {
+                product.style.display = 'grid';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    }
+
+    // Handle click on "Accessories" button
+    document.getElementById('accessoriesFf-btn').onclick = function() {
+        filterProducts('accessories');
+        toggleCheckIcon('accessories-check-icon');
+        actionToggle(); // Toggle action container immediately
+        // setTimeout(function() {
+        //     actionToggle(); 
+        // }, 3000);
+    };
+
+    // Handle click on "Others" button
+    document.getElementById('storeFf-btn').onclick = function() {
+        filterProducts('others');
+        toggleCheckIcon('store-check-icon');
+        actionToggle(); // Toggle action container immediately
+        // setTimeout(function() {
+        //     actionToggle(); 
+        // }, 3000);
+    };
+
+    // Function to toggle check icon visibility
+    function toggleCheckIcon(checkIconId) {
+        var checkIcons = document.querySelectorAll('.checkFf-icon');
+        checkIcons.forEach(function(icon) {
+            icon.classList.remove('visible');
+        });
+        var checkIcon = document.getElementById(checkIconId);
+        checkIcon.classList.add('visible');
+    }
+
+    // Function to handle click on filter icon
+    document.querySelector('.action > span:last-child').onclick = function() {
+        actionToggle();
+    };
+
+</script>
+
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    var accessoriesBtn = document.getElementById('accessories-btn');
-    var storeBtn = document.getElementById('store-btn');
-    
-    accessoriesBtn.addEventListener('click', function() {
-        closeNavbarMenuWithDelay();
-    });
-    
-    storeBtn.addEventListener('click', function() {
-        closeNavbarMenuWithDelay();
-    });
-    
-    function closeNavbarMenuWithDelay() {
-        setTimeout(function() {
-            closeNavbarMenu();
-        }, 2000); // Delay for 3 seconds (3000 milliseconds)
-    }
-    
-    function closeNavbarMenu() {
-        var navbarToggle = document.querySelector('.navbar-toggle');
-        if (navbarToggle.classList.contains('collapsed')) {
-            return; // Navbar menu is already closed
-        }
-        var navbarCollapse = document.getElementById('myNavbar');
-        navbarToggle.click(); // Simulate click to close navbar menu
-    }
-});
+	document.addEventListener('DOMContentLoaded', function () {
+	    var accessoriesBtn = document.getElementById('accessories-btn');
+	    var storeBtn = document.getElementById('store-btn');
+	    
+	    accessoriesBtn.addEventListener('click', function() {
+	        closeNavbarMenuWithDelay();
+	    });
+	    
+	    storeBtn.addEventListener('click', function() {
+	        closeNavbarMenuWithDelay();
+	    });
+	    
+	    function closeNavbarMenuWithDelay() {
+	        setTimeout(function() {
+	            closeNavbarMenu();
+	        }, 2000); // Delay for 3 seconds (3000 milliseconds)
+	    }
+	    
+	    function closeNavbarMenu() {
+	        var navbarToggle = document.querySelector('.navbar-toggle');
+	        if (navbarToggle.classList.contains('collapsed')) {
+	            return; // Navbar menu is already closed
+	        }
+	        var navbarCollapse = document.getElementById('myNavbar');
+	        navbarToggle.click(); // Simulate click to close navbar menu
+	    }
+	});
 </script>
 
 
