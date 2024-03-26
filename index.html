@@ -53,6 +53,9 @@
 	<!-- Fontawesome -->
 	<link href="dir/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
 
+
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 	 <!-- ==Css[internal]== -->
 	<style>
 		 
@@ -125,11 +128,11 @@
 			      <ul class="nav navbar-nav navbar-right spt">
 			        <!-- <li><a href="#">Customer Support:</a></li> -->
 			        <li class="c dropdown">
-			        	<a href="#dpwn" class="dropbtn"> <i class="fa fa-whatsapp t" aria-hidden="true"></i></a>
-			        	<div class="dropdown-content">
+			        	<a href="https://wa.link/8ts26t" class="dropbtn"> <i class="fa fa-whatsapp t" aria-hidden="true"></i></a>
+			        	<!-- <div class="dropdown-content">
 						    <span>08055801083</span>
 						    <span>09080220770</span>
-					    </div>
+					    </div> -->
 			        </li>
 			        <li class="dropdown d">
 			        	<a href="#dpwn" class="dropbtn" >Customer Care</a>
@@ -198,7 +201,7 @@
 				        <strong>Explore Credit Options:</strong> - Interested in flexible payment plans? Click on the credit button to discover our credit offerings.
 				      </div>
 				      
-				        <button class="material-icons" style="color: #ff6600;" onclick="window.location.href='#'">
+				        <button class="material-icons" style="color: #ff6600;" onclick="window.location.href='https://wa.link/8ts26t'">
 				          Credit
 				        </button>
 				      </div>
@@ -887,6 +890,9 @@
 					             </p>
 					             <!-- bot detector -->
 	                        </div>
+	                        <!-- g-recaptcher -->
+	                        <span id="error-captcha"></span>
+        					<div class="g-recaptcha" data-sitekey="6LfEI3gpAAAAAK3jNlZ2D96ieyVKP_srt8VKPG3Y"></div>
 	                    </div>
 	                </div>
 					<!-- End Form step [2] Ends -->
@@ -929,17 +935,23 @@
 						    </div>
 						    <div class="bank-details access" style="display:none;">
 						        <h4>Access Bank Details:</h4>
-						        <p>Name: <strong>Anagbogu Uchenna Claudio</strong></p>
-						        <p>Bank Account Number: <strong>1527910690</strong></p>
+						        <p>Name: <strong>N.A</strong></p>
+						        <p>Bank Account Number: <strong>N.A</strong></p>
 						        <p>Bank Name: <strong>Access Bank</strong></p>
-						        <span style="margin-top: 16px; font-size: 13px; font-style: italic;">After the bank transfer, click on the <strong>"Notify Seller"</strong> button bellow</span>
+						        <span style="margin-top: 16px; font-size: 13px; font-style: italic;"><!-- After the bank transfer, click on the <strong>"Notify Seller"</strong> button bellow -->
+						        	Access Bank Not available.
+						        	Please use the Zenith Bank Option
+						        </span>
 						    </div>
 						    <div class="bank-details opay" style="display:none;">
 						        <h4>Opay Bank Details:</h4>
 						        <p>Name: <strong style="font-style: italic;">N.A</strong></p>
 						        <p>Bank Account Number: <strong>N.A</strong></p>
 						        <p>Bank Name: <strong style="font-style: italic;">Opay Bank</strong></p>
-						        <span style="margin-top: 16px; font-size: 13px; font-style: italic;">After the bank transfer, click on the <strong>"Notify Seller"</strong> button bellow</span>
+						        <span style="margin-top: 16px; font-size: 13px; font-style: italic;"><!-- After the bank transfer, click on the <strong>"Notify Seller"</strong> button bellow -->
+						        	Opay Not available.
+						        	Please use the Zenith Bank Option
+						        </span>
 						    </div>
 
 						    <span style="margin-top: 16px; font-size: 13px; font-style: italic;" class="note-msg"><strong>Note:</strong> You re to make your bank transfer within the count down set time. Your order will be cancel after the 15mins time out.</span>
@@ -981,6 +993,7 @@
 					<!-- End form step [3] Ends -->
 
 					<span id="initPayMsg">Please initiate! a payment</span>
+					<!-- <span id="recaptMsgMsg">Please go back! and complete robot check</span> -->
 
 					<!-- Final Form Step Starts-->
 				    <div id="final-step" style="display:none;">
@@ -1116,12 +1129,12 @@
 			  	<p class="email">info@clautechzs.com</p>
 			  	<div class="social">
 				  	<span class="dropdown">
-				  		<a href="">
+				  		<a href="https://wa.link/8ts26t">
 				  			<span> <i class="fa fa-whatsapp v" aria-hidden="true"></i></span>
-					  		<div class="dropdown-content">
+					  		<!-- <div class="dropdown-content">
 							    <span>08055801083</span>
 							    <span>09080220770</span>
-						    </div>
+						    </div> -->
 				  		</a>
 				  		
 				  	</span>
@@ -1191,6 +1204,7 @@
 <!-- CMS -->
 <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
 <script src="js/contentful-index.js"></script>
+
 
 <script type="text/javascript">
 		window.addEventListener("load", function() {
@@ -1530,6 +1544,41 @@
         }
 
 </script>
+
+<!-- <script type="text/javascript">
+  // Function to handle reCAPTCHA validation
+  async function handleRecaptchaValidation() {
+    var botErr = document.getElementById("error-captcha");
+
+    // Check if reCAPTCHA response is present
+    var recaptchaResponse = grecaptcha.getResponse();
+    if (!recaptchaResponse) {
+      // Display error message if reCAPTCHA response is missing
+      botErr.innerHTML = "Please complete the robot check";
+      return false; // Return false to indicate validation failure
+    }
+    return true; // Return true to indicate validation success
+  }
+
+  // Add event listener to the "next" button for reCAPTCHA validation
+  var nextButton = document.getElementById("next");
+  nextButton.addEventListener("click", function(event) {
+    // Prevent default form submission behavior
+    event.preventDefault();
+
+    // Perform reCAPTCHA validation
+    handleRecaptchaValidation().then(function(validationResult) {
+      if (validationResult) {
+        // Proceed with the next step of the form
+        // Add your logic to move to the next step of the form here
+      } else {
+        // Do not proceed with the form submission if reCAPTCHA validation fails
+        // You can display an error message or handle it as needed
+      }
+    });
+  });
+</script> -->
+
 
 </body>
 </html>

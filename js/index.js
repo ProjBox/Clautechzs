@@ -833,34 +833,91 @@ document.addEventListener("DOMContentLoaded", function() {
 
         });
 
-        document.getElementById('next').addEventListener('click', function() {
+        // document.getElementById('next').addEventListener('click', function() {
             
-            // Check phone and email validity before proceeding
-            const phoneInput = document.getElementById('phone');
-            const emailInput = document.getElementById('email');
-            // Validate email and phone
-            const isPhoneValid = validatePhone(phoneInput.value);
-            const isEmailValid = validateEmail(emailInput.value);
-            const invalidMsg = document.getElementById('invalidMsg');
+        //     // Check phone and email validity before proceeding
+        //     const phoneInput = document.getElementById('phone');
+        //     const emailInput = document.getElementById('email');
+        //     // Validate email and phone
+        //     const isPhoneValid = validatePhone(phoneInput.value);
+        //     const isEmailValid = validateEmail(emailInput.value);
+        //     const invalidMsg = document.getElementById('invalidMsg');
 
-            if (!validatePhone(phoneInput.value) && !validateEmail(emailInput.value)) {
-                // alert('Please enter a valid phone number/email.');
-                emailInput.classList.add('invalid-input');
-                invalidMsg.style.display = "block";
-                currentStep = 2;
-                updateStep();
-            } else {
-                invalidMsg.style.display = "none";
-                emailInput.classList.remove('invalid-input');
-                currentStep = 3;
-                updateStep();
-                populateSecondForm();
-                updateSubtotal();
-                updateTotal();
-                populateProductDetailsInput();
-            }
+        //     if (!validatePhone(phoneInput.value) && !validateEmail(emailInput.value)) {
+        //         // alert('Please enter a valid phone number/email.');
+        //         emailInput.classList.add('invalid-input');
+        //         invalidMsg.style.display = "block";
+        //         currentStep = 2;
+        //         updateStep();
+        //     } else {
+        //         invalidMsg.style.display = "none";
+        //         emailInput.classList.remove('invalid-input');
+        //         currentStep = 3;
+        //         updateStep();
+        //         populateSecondForm();
+        //         updateSubtotal();
+        //         updateTotal();
+        //         populateProductDetailsInput();
+        //     }
                     
+        // });
+
+
+        // RECAPTCHER SETTINGS..
+
+            // Function to handle reCAPTCHA validation
+            function handleRecaptchaValidation() {
+                const recaptchaResponse = grecaptcha.getResponse();
+                if (recaptchaResponse === '') {
+                    // If reCAPTCHA response is empty, display an error message
+                    document.getElementById('error-captcha').innerText = 'Please complete the reCAPTCHA.';
+                    return false;
+                } else {
+                    // If reCAPTCHA response is present, clear any previous error messages
+                    document.getElementById('error-captcha').innerText = '';
+                    return true;
+                }
+            }
+
+
+        // Event listener for the "Next" button
+        document.getElementById('next').addEventListener('click', function(event) {
+            // Prevent default form submission behavior
+            event.preventDefault();
+
+            // Perform reCAPTCHA validation
+            const isRecaptchaValid = handleRecaptchaValidation();
+
+            if (isRecaptchaValid) {
+                // Proceed with the next step logic
+                // Check phone and email validity before proceeding
+                const phoneInput = document.getElementById('phone');
+                const emailInput = document.getElementById('email');
+                // Validate email and phone
+                const isPhoneValid = validatePhone(phoneInput.value);
+                const isEmailValid = validateEmail(emailInput.value);
+                const invalidMsg = document.getElementById('invalidMsg');
+
+                if (!validatePhone(phoneInput.value) && !validateEmail(emailInput.value)) {
+                    // Display error message if phone or email is invalid
+                    emailInput.classList.add('invalid-input');
+                    invalidMsg.style.display = 'block';
+                    currentStep = 2;
+                    updateStep();
+                } else {
+                    // Proceed to the next step if phone and email are valid
+                    invalidMsg.style.display = 'none';
+                    emailInput.classList.remove('invalid-input');
+                    currentStep = 3;
+                    updateStep();
+                    populateSecondForm();
+                    updateSubtotal();
+                    updateTotal();
+                    populateProductDetailsInput();
+                }
+            }
         });
+
 
 
         function validatePhone(phone) {
@@ -876,31 +933,78 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
 
+        // document.getElementById('notifyButton').addEventListener('click', function(event) {
+        //     // event.preventDefault();  // Prevent form submission
+
+        //     const selectedBank = document.querySelector('.bank-radio:checked');
+        //     const selectedPaymentMethod = document.querySelector('input[name="payment-method"]:checked');
+
+        //     const initPayMsg = document.getElementById('initPayMsg');
+        //     let initPayChar = document.getElementById('payment-options');
+
+        //     if (!selectedBank && !selectedPaymentMethod) {
+        //         // alert('Please select a bank or payment method.');
+        //         event.preventDefault();  // Prevent form submission
+
+        //         initPayMsg.style.display = "block";
+        //         initPayMsg.style.opacity = 1;
+        //         initPayChar.style.background = "#d66e0057";
+        //         initPayChar.style.opacity = 0.4;
+        //     } else {
+        //         // If a radio button or payment method is selected..
+        //         currentStep = 4;  // proceed to the final step
+        //         updateStep();
+        //     }
+
+
+        // });
+
+
+        // Event listener for the "Notify" button
         document.getElementById('notifyButton').addEventListener('click', function(event) {
-            // event.preventDefault();  // Prevent form submission
+            // Prevent default form submission behavior
+            // event.preventDefault();
 
-            const selectedBank = document.querySelector('.bank-radio:checked');
-            const selectedPaymentMethod = document.querySelector('input[name="payment-method"]:checked');
+                // Proceed with form submission if reCAPTCHA is valid
+                const selectedBank = document.querySelector('.bank-radio:checked');
+                const selectedPaymentMethod = document.querySelector('input[name="payment-method"]:checked');
 
-            const initPayMsg = document.getElementById('initPayMsg');
-            let initPayChar = document.getElementById('payment-options');
+                const initPayMsg = document.getElementById('initPayMsg');
+                let initPayChar = document.getElementById('payment-options');
 
-            if (!selectedBank && !selectedPaymentMethod) {
-                // alert('Please select a bank or payment method.');
-                event.preventDefault();  // Prevent form submission
+                if (!selectedBank && !selectedPaymentMethod) {
+                    event.preventDefault();  // Prevent form submission
+                    // Display error message if bank or payment method is not selected
+                    initPayMsg.style.display = 'block';
+                    initPayMsg.style.opacity = 1;
+                    initPayChar.style.background = '#d66e0057';
+                    initPayChar.style.opacity = 0.4;
+                } else {
+                    // Proceed to the final step if bank or payment method is selected
+                    currentStep = 4;
+                    updateStep();
+                }
 
-                initPayMsg.style.display = "block";
-                initPayMsg.style.opacity = 1;
-                initPayChar.style.background = "#d66e0057";
-                initPayChar.style.opacity = 0.4;
-            } else {
-                // If a radio button or payment method is selected..
-                currentStep = 4;  // proceed to the final step
-                updateStep();
-            }
+                // Perform reCAPTCHA validation
+                const isRecaptchaValid = handleRecaptchaValidation();
 
+                // const startRecaptMsg = document.getElementById('recaptMsgMsg');
+                // let startRecaptChar = document.getElementById('payment-options');
 
+                if (isRecaptchaValid) {
+
+                    // If the user recaptcher, submit the form
+                    document.getElementById('cartForm').submit();
+                }else {
+                    // break the loop or continue prompting
+                    // startRecaptMsg.style.display = 'block';
+                    // startRecaptMsg.style.opacity = 1;
+                    // startRecaptChar.style.background = '#d66e0057';
+                    // startRecaptChar.style.opacity = 0.4;
+                }
+ 
         });
+
 
 
         document.getElementById('goBackButton').addEventListener('click', function() {

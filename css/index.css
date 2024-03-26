@@ -1914,6 +1914,17 @@
         font-weight: 600;
     }
 
+    #recaptMsgMsg{
+
+        display: none;
+        opacity: 1;
+        text-align: center;
+        background: #faebdc;
+        color: #ff6600;
+        font-weight: 600;
+
+    }
+
 
 
         #paystackFormField input{
