@@ -881,47 +881,60 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
         // Event listener for the "Next" button
-        document.getElementById('next').addEventListener('click', function(event) {
+               document.getElementById('next').addEventListener('click', function(event) {
             // Prevent default form submission behavior
             event.preventDefault();
-
-           
 
             // Proceed with the next step logic
             // Check phone and email validity before proceeding
             const phoneInput = document.getElementById('phone');
             const emailInput = document.getElementById('email');
-            // Validate email and phone
-            const isPhoneValid = validatePhone(phoneInput.value);
+
+            // Validate email
             const isEmailValid = validateEmail(emailInput.value);
             const invalidMsg = document.getElementById('invalidMsg');
 
-            if (!validatePhone(phoneInput.value) && !validateEmail(emailInput.value)) {
-                // Display error message if phone or email is invalid
+            if (!isEmailValid) {
+                // Display error message if email is invalid
                 emailInput.classList.add('invalid-input');
+                invalidMsg.textContent = 'Invalid email';
                 invalidMsg.style.display = 'block';
                 currentStep = 2;
                 updateStep();
             } else {
-                // Proceed to the next step if phone and email are valid
+                // Proceed to the next step if email is valid
                 invalidMsg.style.display = 'none';
                 emailInput.classList.remove('invalid-input');
+
+                // Perform reCAPTCHA validation
+                const isRecaptchaValid = handleRecaptchaValidation();
+
+                const recaptchaError = document.getElementById('errornext');
+
+                // If reCAPTCHA is not valid, display appropriate error message and return
+                if (!isRecaptchaValid) {
+                    alert('Please complete the reCAPTCHA.');
+                    recaptchaError.style.display = 'block';
+                    return;
+                }
+
+                // Proceed to the next step if both email and reCAPTCHA are valid
                 currentStep = 3;
                 updateStep();
                 populateSecondForm();
                 updateSubtotal();
                 updateTotal();
                 populateProductDetailsInput();
-
-                // Perform reCAPTCHA validation
-                const isRecaptchaValid = handleRecaptchaValidation();
-
-                // If reCAPTCHA is not valid, do not proceed
-                if (!isRecaptchaValid) {
-                    return;
-                }
-         
             }
+
+             const startRecaptMsg = document.getElementById('recaptMsgMsg');
+             let startRecaptChar = document.getElementById('payment-options');
+
+            startRecaptMsg.style.display = 'none';
+            startRecaptMsg.style.opacity = 1;
+            startRecaptChar.style.background = 'transparent';
+            startRecaptChar.style.opacity = 1;
+
 
         });
 
@@ -999,6 +1012,12 @@ document.addEventListener("DOMContentLoaded", function() {
                         currentStep = 4;
                         updateStep();
                         document.getElementById('cartForm').submit();
+                        // hide prompting
+                        startRecaptMsg.style.display = 'none';
+                        startRecaptMsg.style.opacity = 1;
+                        startRecaptChar.style.background = 'transparent';
+                        startRecaptChar.style.opacity = 1;
+
                     } else {
                         event.preventDefault();
                         // Display error message or take appropriate action if reCAPTCHA validation fails
@@ -1035,6 +1054,15 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('goBackButton').addEventListener('click', function() {
             currentStep = 2;
             updateStep();
+
+            const startRecaptMsg = document.getElementById('recaptMsgMsg');
+            let startRecaptChar = document.getElementById('payment-options');
+
+            startRecaptMsg.style.display = 'none';
+            startRecaptMsg.style.opacity = 1;
+            startRecaptChar.style.background = 'transparent';
+            startRecaptChar.style.opacity = 1;
+
         });
 
 

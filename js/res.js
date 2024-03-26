@@ -286,3 +286,53 @@ document.getElementById('notifyButton').addEventListener('click', function(event
         }
     }
 });
+
+
+
+
+
+// validat recapture on step 2, but has alart bypass issue.. still okay sha
+  // Event listener for the "Next" button
+document.getElementById('next').addEventListener('click', function(event) {
+    // Prevent default form submission behavior
+    event.preventDefault();
+
+    // Proceed with the next step logic
+    // Check phone and email validity before proceeding
+    const phoneInput = document.getElementById('phone');
+    const emailInput = document.getElementById('email');
+
+    // Validate email
+    const isEmailValid = validateEmail(emailInput.value);
+    const invalidMsg = document.getElementById('invalidMsg');
+
+    if (!isEmailValid) {
+        // Display error message if email is invalid
+        emailInput.classList.add('invalid-input');
+        invalidMsg.textContent = 'Invalid email';
+        invalidMsg.style.display = 'block';
+        currentStep = 2;
+        updateStep();
+    } else {
+        // Proceed to the next step if email is valid
+        invalidMsg.style.display = 'none';
+        emailInput.classList.remove('invalid-input');
+
+        // Perform reCAPTCHA validation
+        const isRecaptchaValid = handleRecaptchaValidation();
+
+        // If reCAPTCHA is not valid, display appropriate error message and return
+        if (!isRecaptchaValid) {
+            alert('Please complete the reCAPTCHA.');
+            return;
+        }
+
+        // Proceed to the next step if both email and reCAPTCHA are valid
+        currentStep = 3;
+        updateStep();
+        populateSecondForm();
+        updateSubtotal();
+        updateTotal();
+        populateProductDetailsInput();
+    }
+});
