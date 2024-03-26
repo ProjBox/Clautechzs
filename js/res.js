@@ -211,3 +211,78 @@ if (userConfirmed) {
     } else {
         // break the loop or continue prompting
     }
+
+
+    // NEW SETTINGS RECAPTCHER
+
+    // Event listener for the "Next" button
+document.getElementById('next').addEventListener('click', function(event) {
+    // Prevent default form submission behavior
+    event.preventDefault();
+
+    // Proceed with the next step logic
+    // Check phone and email validity before proceeding
+    const phoneInput = document.getElementById('phone');
+    const emailInput = document.getElementById('email');
+    // Validate email and phone
+    const isPhoneValid = validatePhone(phoneInput.value);
+    const isEmailValid = validateEmail(emailInput.value);
+    const invalidMsg = document.getElementById('invalidMsg');
+
+    if (!validatePhone(phoneInput.value) && !validateEmail(emailInput.value)) {
+        // Display error message if phone or email is invalid
+        emailInput.classList.add('invalid-input');
+        invalidMsg.style.display = 'block';
+        currentStep = 2;
+        updateStep();
+    } else {
+        // Proceed to the next step if phone and email are valid
+        invalidMsg.style.display = 'none';
+        emailInput.classList.remove('invalid-input');
+        currentStep = 3;
+        updateStep();
+        populateSecondForm();
+        updateSubtotal();
+        updateTotal();
+        populateProductDetailsInput();
+        
+        // Perform reCAPTCHA validation
+        const isRecaptchaValid = handleRecaptchaValidation();
+
+        // If reCAPTCHA is not valid, do not proceed
+        if (!isRecaptchaValid) {
+            return;
+        }
+    }
+});
+
+
+
+// Event listener for the "Notify" button
+document.getElementById('notifyButton').addEventListener('click', function(event) {
+    // Prevent default form submission behavior
+    event.preventDefault();
+
+    // Proceed with form submission if reCAPTCHA is valid
+    const selectedBank = document.querySelector('.bank-radio:checked');
+    const selectedPaymentMethod = document.querySelector('input[name="payment-method"]:checked');
+
+    const initPayMsg = document.getElementById('initPayMsg');
+    let initPayChar = document.getElementById('payment-options');
+
+    if (!selectedBank && !selectedPaymentMethod) {
+        // Display error message if bank or payment method is not selected
+        initPayMsg.style.display = 'block';
+        initPayMsg.style.opacity = 1;
+        initPayChar.style.background = '#d66e0057';
+        initPayChar.style.opacity = 0.4;
+    } else {
+        // Perform reCAPTCHA validation
+        const isRecaptchaValid = handleRecaptchaValidation();
+
+        // If reCAPTCHA is valid, submit the form
+        if (isRecaptchaValid) {
+            document.getElementById('cartForm').submit();
+        }
+    }
+});

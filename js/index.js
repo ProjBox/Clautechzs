@@ -912,25 +912,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 updateSubtotal();
                 updateTotal();
                 populateProductDetailsInput();
+
+                // Perform reCAPTCHA validation
+                const isRecaptchaValid = handleRecaptchaValidation();
+
+                // If reCAPTCHA is not valid, do not proceed
+                if (!isRecaptchaValid) {
+                    return;
+                }
          
-            }
-
-             // Perform reCAPTCHA validation
-            const isRecaptchaValid = handleRecaptchaValidation();
-
-
-            if (isRecaptchaValid) {
-                
-                currentStep = 2;
-                updateStep();
-            }else{
-
-                currentStep = 3;
-                updateStep();
-                populateSecondForm();
-                updateSubtotal();
-                updateTotal();
-                populateProductDetailsInput();
             }
 
         });
@@ -997,28 +987,46 @@ document.addEventListener("DOMContentLoaded", function() {
                     initPayChar.style.background = '#d66e0057';
                     initPayChar.style.opacity = 0.4;
                 } else {
-                    // Proceed to the final step if bank or payment method is selected
-                    currentStep = 4;
-                    updateStep();
+                    // Perform reCAPTCHA validation
+                    const isRecaptchaValid = handleRecaptchaValidation();
+
+                const startRecaptMsg = document.getElementById('recaptMsgMsg');
+                let startRecaptChar = document.getElementById('payment-options');
+
+
+                    if (isRecaptchaValid) {
+                        // Proceed to the final step if bank or payment method is selected and reCAPTCHA is valid
+                        currentStep = 4;
+                        updateStep();
+                        document.getElementById('cartForm').submit();
+                    } else {
+                        event.preventDefault();
+                        // Display error message or take appropriate action if reCAPTCHA validation fails
+                        // break the loop or continue prompting
+                        startRecaptMsg.style.display = 'block';
+                        startRecaptMsg.style.opacity = 1;
+                        startRecaptChar.style.background = '#d66e0057';
+                        startRecaptChar.style.opacity = 0.4;
+                    }
                 }
 
                 // Perform reCAPTCHA validation
-                const isRecaptchaValid = handleRecaptchaValidation();
+                // const isRecaptchaValid = handleRecaptchaValidation();
 
                 // const startRecaptMsg = document.getElementById('recaptMsgMsg');
                 // let startRecaptChar = document.getElementById('payment-options');
 
-                if (isRecaptchaValid) {
+                // if (isRecaptchaValid) {
 
-                    // If the user recaptcher, submit the form
-                    document.getElementById('cartForm').submit();
-                }else {
-                    // break the loop or continue prompting
-                    // startRecaptMsg.style.display = 'block';
-                    // startRecaptMsg.style.opacity = 1;
-                    // startRecaptChar.style.background = '#d66e0057';
-                    // startRecaptChar.style.opacity = 0.4;
-                }
+                //     // If the user recaptcher, submit the form
+                //     document.getElementById('cartForm').submit();
+                // }else {
+                //     // break the loop or continue prompting
+                //     // startRecaptMsg.style.display = 'block';
+                //     // startRecaptMsg.style.opacity = 1;
+                //     // startRecaptChar.style.background = '#d66e0057';
+                //     // startRecaptChar.style.opacity = 0.4;
+                // }
  
         });
 
