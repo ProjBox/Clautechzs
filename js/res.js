@@ -104,3 +104,11 @@
 
 
 
+
+
+// // product
+// background-color: rgb(245 245 245 / var(--tw-bg-opacity));
+// backgroung: rgb(245 245 245);
+
+// // body
+// background-color: rgb(248 248 248);
