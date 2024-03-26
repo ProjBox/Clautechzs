@@ -885,37 +885,54 @@ document.addEventListener("DOMContentLoaded", function() {
             // Prevent default form submission behavior
             event.preventDefault();
 
-            // Perform reCAPTCHA validation
+           
+
+            // Proceed with the next step logic
+            // Check phone and email validity before proceeding
+            const phoneInput = document.getElementById('phone');
+            const emailInput = document.getElementById('email');
+            // Validate email and phone
+            const isPhoneValid = validatePhone(phoneInput.value);
+            const isEmailValid = validateEmail(emailInput.value);
+            const invalidMsg = document.getElementById('invalidMsg');
+
+            if (!validatePhone(phoneInput.value) && !validateEmail(emailInput.value)) {
+                // Display error message if phone or email is invalid
+                emailInput.classList.add('invalid-input');
+                invalidMsg.style.display = 'block';
+                currentStep = 2;
+                updateStep();
+            } else {
+                // Proceed to the next step if phone and email are valid
+                invalidMsg.style.display = 'none';
+                emailInput.classList.remove('invalid-input');
+                currentStep = 3;
+                updateStep();
+                populateSecondForm();
+                updateSubtotal();
+                updateTotal();
+                populateProductDetailsInput();
+         
+            }
+
+             // Perform reCAPTCHA validation
             const isRecaptchaValid = handleRecaptchaValidation();
 
-            if (isRecaptchaValid) {
-                // Proceed with the next step logic
-                // Check phone and email validity before proceeding
-                const phoneInput = document.getElementById('phone');
-                const emailInput = document.getElementById('email');
-                // Validate email and phone
-                const isPhoneValid = validatePhone(phoneInput.value);
-                const isEmailValid = validateEmail(emailInput.value);
-                const invalidMsg = document.getElementById('invalidMsg');
 
-                if (!validatePhone(phoneInput.value) && !validateEmail(emailInput.value)) {
-                    // Display error message if phone or email is invalid
-                    emailInput.classList.add('invalid-input');
-                    invalidMsg.style.display = 'block';
-                    currentStep = 2;
-                    updateStep();
-                } else {
-                    // Proceed to the next step if phone and email are valid
-                    invalidMsg.style.display = 'none';
-                    emailInput.classList.remove('invalid-input');
-                    currentStep = 3;
-                    updateStep();
-                    populateSecondForm();
-                    updateSubtotal();
-                    updateTotal();
-                    populateProductDetailsInput();
-                }
+            if (isRecaptchaValid) {
+                
+                currentStep = 2;
+                updateStep();
+            }else{
+
+                currentStep = 3;
+                updateStep();
+                populateSecondForm();
+                updateSubtotal();
+                updateTotal();
+                populateProductDetailsInput();
             }
+
         });
 
 
