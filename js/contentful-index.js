@@ -7,7 +7,7 @@ var client = contentful.createClient({
 
 
 
-// Core**
+// Item Dynamic**
 client.getEntries()
   .then((response) => {
     const products = response.items;
@@ -60,7 +60,7 @@ client.getEntries()
           percentSpan.style.display = 'none';
       }
 
-
+ 
     });
   })
   .catch((error) => {
@@ -69,7 +69,7 @@ client.getEntries()
 
   
 
-// Core**
+// Item Static**
 const entryIdToElementIdMap = {
     '7e3WdPW6D70r3kQmGFJ7xb': 'InfinixCharger',
     '1oQWcileLrxC6m10wgr8nX': 'OraimoCharger',

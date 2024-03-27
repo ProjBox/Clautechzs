@@ -909,12 +909,20 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Perform reCAPTCHA validation
                 const isRecaptchaValid = handleRecaptchaValidation();
 
-                const recaptchaError = document.getElementById('errornext');
+                // const recaptchaErrors = document.getElementById('errornext');
+
+                const startRecaptMsg = document.getElementById('recaptMsgMsg');
+                let startRecaptChar = document.getElementById('payment-options');
 
                 // If reCAPTCHA is not valid, display appropriate error message and return
                 if (!isRecaptchaValid) {
+                    // recaptchaErrors.style.display = 'block';
+                    // break the loop or continue prompting
+                    startRecaptMsg.style.display = 'block';
+                    startRecaptMsg.style.opacity = 1;
+                    startRecaptChar.style.background = '#d66e0057';
+                    startRecaptChar.style.opacity = 0.4;
                     alert('Please complete the reCAPTCHA.');
-                    recaptchaError.style.display = 'block';
                     return;
                 }
 
@@ -1029,23 +1037,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 }
 
-                // Perform reCAPTCHA validation
-                // const isRecaptchaValid = handleRecaptchaValidation();
-
-                // const startRecaptMsg = document.getElementById('recaptMsgMsg');
-                // let startRecaptChar = document.getElementById('payment-options');
-
-                // if (isRecaptchaValid) {
-
-                //     // If the user recaptcher, submit the form
-                //     document.getElementById('cartForm').submit();
-                // }else {
-                //     // break the loop or continue prompting
-                //     // startRecaptMsg.style.display = 'block';
-                //     // startRecaptMsg.style.opacity = 1;
-                //     // startRecaptChar.style.background = '#d66e0057';
-                //     // startRecaptChar.style.opacity = 0.4;
-                // }
+                
  
         });
 
@@ -1107,8 +1099,24 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         function payWithPaystack(formData) {
+
+            // Verify reCAPTCHA completion
+            const isRecaptchaValid = handleRecaptchaValidation();
+
+            // Proceed only if reCAPTCHA is valid
+            if (!isRecaptchaValid) {
+                // Display error message if reCAPTCHA validation fails
+                const recaptchaErrorMsg = document.getElementById('errcaptcha');
+                recaptchaErrorMsg.textContent = 'Please complete the reCAPTCHA.';
+                recaptchaErrorMsg.style.display = 'block';
+                alert('Please complete the reCAPTCHA.');
+                return;
+            }
+
+
             let handler = PaystackPop.setup({
-                key: 'pk_test_bad57d50b13cdfa9057402b543afa2892866350e', // PK
+                // key: 'pk_test_bad57d50b13cdfa9057402b543afa2892866350e', // PK
+                key: 'pk_live_d4fff1f36dac3a20aaa74cbd5a7ebd0338c1b58f', // PK
                 email: formData.email,
                 amount: formData.amount * 100,
                 currency: 'NGN', // Naira

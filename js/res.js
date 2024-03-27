@@ -336,3 +336,54 @@ document.getElementById('next').addEventListener('click', function(event) {
         populateProductDetailsInput();
     }
 });
+
+
+
+function payWithPaystack(formData) {
+    // Verify reCAPTCHA completion
+    const isRecaptchaValid = handleRecaptchaValidation();
+
+    // Proceed only if reCAPTCHA is valid
+    if (isRecaptchaValid) {
+        let handler = PaystackPop.setup({
+            key: 'pk_test_bad57d50b13cdfa9057402b543afa2892866350e', // PK
+            email: formData.email,
+            amount: formData.amount * 100,
+            currency: 'NGN', // Naira
+            ref: formData.orderNumberRef,
+            channel: 'card',
+            onClose: function () {
+                alert('Click Okay to Cancel.');
+            },
+            callback: function (response) {
+                let message = 'Payment Successful! Order No: ' + response.reference;
+                while (true) {
+                    let userConfirmed = confirm(message + '\n\n Click Okay to proceed ');
+
+                    if (userConfirmed) {
+                        // If the user confirms, submit the form
+                        document.getElementById('cartForm').submit();
+                        currentStep = 4; // Moves to the next step to display order details
+                        updateStep();
+                        break; // Exit the loop if the user confirms
+                    } else {
+                        // Continue prompting until the user confirms
+                    }
+                }
+            }
+        });
+
+        handler.openIframe();
+    } else {
+        // Display error message or take appropriate action if reCAPTCHA validation fails
+        // For example, show an error message to the user
+        alert('Please complete the reCAPTCHA.');
+    }
+}
+
+// Event listener to Paystack button
+const paystackButton = document.getElementById('paystackButton'); // Paystack button
+paystackButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    payWithPaystack(formData); // Call payWithPaystack function to initiate payment
+}, false);
