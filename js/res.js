@@ -387,3 +387,227 @@ paystackButton.addEventListener("click", function (e) {
     e.preventDefault();
     payWithPaystack(formData); // Call payWithPaystack function to initiate payment
 }, false);
+
+
+// Target Reload..
+
+// Function to save current step to sessionStorage
+function saveCurrentStep(step) {
+    sessionStorage.setItem('currentStep', step);
+}
+
+// Function to retrieve current step from sessionStorage
+function getCurrentStep() {
+    return sessionStorage.getItem('currentStep');
+}
+
+// Function to save cart items to sessionStorage
+function saveCartItems(cartItems) {
+    sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+}
+
+// Function to retrieve cart items from sessionStorage
+function getCartItems() {
+    const cartItems = sessionStorage.getItem('cartItems');
+    return cartItems ? JSON.parse(cartItems) : [];
+}
+
+// Update the current step and cart items whenever they change
+function updateStepAndCart(step, cartItems) {
+    saveCurrentStep(step);
+    saveCartItems(cartItems);
+}
+
+// Function to initialize form and cart with saved data
+function initializeFormAndCart() {
+    const currentStep = getCurrentStep();
+    // Show the form section corresponding to the current step
+    // Update the cart with the retrieved cart items
+}
+
+// Add event listeners to form elements to update step and cart
+// Handle form submission to prevent default behavior and submit data via AJAX
+
+// Call initializeFormAndCart() when the page loads
+initializeFormAndCart();
+
+
+
+
+// =============
+// Function to save current step to sessionStorage
+// Function to save current step to sessionStorage
+function saveCurrentStep(step) {
+    sessionStorage.setItem('currentStep', step);
+}
+
+// Function to retrieve current step from sessionStorage
+function getCurrentStep() {
+    return sessionStorage.getItem('currentStep');
+}
+
+// Function to save cart items to sessionStorage
+function saveCartItems(cartItems) {
+    sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+}
+
+// Function to retrieve cart items from sessionStorage
+function getCartItems() {
+    const cartItems = sessionStorage.getItem('cartItems');
+    return cartItems ? JSON.parse(cartItems) : [];
+}
+
+// Sample usage
+const currentStep = 2;
+saveCurrentStep(currentStep);
+console.log('Current step:', getCurrentStep());
+
+const sampleCartItems = [
+    { id: 1, name: 'Product 1', price: 10 },
+    { id: 2, name: 'Product 2', price: 20 }
+];
+saveCartItems(sampleCartItems);
+console.log('Cart items:', getCartItems());
+
+
+
+
+// =============
+document.addEventListener("DOMContentLoaded", function() {
+    /*__==Global Variables==__*/
+    // Existing global variables...
+
+    /*__==Session Storage Functions==__*/
+    // Function to save current step to sessionStorage
+    function saveCurrentStep(step) {
+        sessionStorage.setItem('currentStep', step);
+    }
+
+    // Function to retrieve current step from sessionStorage
+    function getCurrentStep() {
+        return sessionStorage.getItem('currentStep');
+    }
+
+    // Function to save cart items to sessionStorage
+    function saveCartItems(cartItems) {
+        sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
+
+    // Function to retrieve cart items from sessionStorage
+    function getCartItems() {
+        const cartItems = sessionStorage.getItem('cartItems');
+        return cartItems ? JSON.parse(cartItems) : [];
+    }
+
+    /*__==Event Listeners==__*/
+    // Event listeners for adding to cart, removing from cart, etc.
+    // Ensure that whenever cart items are modified, you call saveCartItems() to update session storage.
+
+    /*__==Other Functions==__*/
+    // Existing functions like addToCart, removeFromCart, updateSubtotal, updateTotal, etc.
+
+    // Retrieve current step and cart items on page load
+    const currentStep = getCurrentStep();
+    const cartItems = getCartItems();
+
+    // Optionally, update UI based on retrieved data
+    // For example:
+    // if (currentStep) {
+    //     // Update UI based on the current step
+    // }
+    // if (cartItems.length > 0) {
+    //     // Update cart UI based on retrieved cart items
+    // }
+});
+
+
+
+
+/*__==Global Variables==__*/
+// Existing global variables...
+
+/*__==Session Storage Functions==__*/
+// Function to save current step to sessionStorage
+function saveCurrentStep(step) {
+    sessionStorage.setItem('currentStep', step);
+}
+
+// Function to retrieve current step from sessionStorage
+function getCurrentStep() {
+    return sessionStorage.getItem('currentStep');
+}
+
+// Function to save cart items to sessionStorage
+function saveCartItems(cartItems) {
+    sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+}
+
+// Function to retrieve cart items from sessionStorage
+function getCartItems() {
+    const cartItems = sessionStorage.getItem('cartItems');
+    return cartItems ? JSON.parse(cartItems) : [];
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Retrieve current step and cart items on page load
+    const currentStep = getCurrentStep();
+    const cartItems = getCartItems();
+    
+    // Now you can use the retrieved current step and cart items here
+    // For example:
+    console.log('Current step:', currentStep);
+    console.log('Cart items:', cartItems);
+    
+    // Any further functionality that depends on currentStep or cartItems
+    // should be placed inside this event listener
+});
+
+
+/* Place this code at the top level of your script */
+// Define the current step variable
+let currentStep = 1;
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Retrieve the cart items from localStorage on page load
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+        cart = JSON.parse(storedCart);
+        // Update the UI with the retrieved cart data
+        updateButtonVisibility();
+        updateSubtotal();
+        updateTotal();
+        populateProductDetailsInput();
+        // Add any additional UI updates as needed
+        updateStep();
+    }
+
+    // Retrieve the current step from localStorage on page load
+    const storedStep = localStorage.getItem('currentStep');
+    if (storedStep) {
+        currentStep = parseInt(storedStep, 10);
+        updateStep(); // Update the UI to reflect the retrieved step
+    }
+
+    // Add any other necessary initialization or setup code here
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Retrieve current step on page load
+    const currentStep = 2; // Assuming step 2 is the checkout step
+
+    // Check if the current step is 2 (checkout form)
+    if (currentStep === 2) {
+        // Listen for beforeunload event
+        window.addEventListener("beforeunload", function(event) {
+            // Cancel the event to prevent page reload
+            event.preventDefault();
+            // Prompt the user to confirm leaving the page
+            event.returnValue = ''; // Some browsers require a return value
+        });
+    }
+    // ... (rest of your existing code)
+});
+

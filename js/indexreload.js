@@ -31,17 +31,20 @@ document.addEventListener("DOMContentLoaded", function() {
         };
 
 
-        
-        // // Function to handle the beforeunload event
+        // Function to handle the beforeunload event
         function handleBeforeUnload(event) {
-            const currentStep = 2; // In the step number
-            if (currentStep === 2) { 
+            const currentStep = 2; // @ step 2
+            if (currentStep === 2) { // Compare with the number directly
                 // Display a confirmation message if the user is on step 2
                 event.preventDefault();
                 event.returnValue = ''; // For Chrome
                 return ''; // For other browsers
             }
         }
+
+        // Add the event listener for beforeunload
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
 
 
 
@@ -255,8 +258,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Call the function to update the total quantity
             updateTotalQuantity();
-
-            
 
         }
 
@@ -811,9 +812,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     const orderNo = generateOrderNumber();
                     orderNumberInput.value = orderNo;
                 }
-
-                // Add the event listener for beforeunload
-                window.addEventListener('beforeunload', handleBeforeUnload);
                 
             }
 
