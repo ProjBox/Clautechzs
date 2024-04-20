@@ -611,3 +611,65 @@ document.addEventListener("DOMContentLoaded", function() {
     // ... (rest of your existing code)
 });
 
+
+
+
+
+
+
+// Image clicked with event delegation for fetched items
+document.addEventListener("DOMContentLoaded", function() {
+    // Add event listener to the body to handle clicks on product images
+    document.body.addEventListener("click", function(event) {
+        const clickedElement = event.target;
+        // Check if the clicked element is a product image
+        if (clickedElement.classList.contains("product-image")) {
+            // Remove the 'clicked' class from all images
+            const productImages = document.querySelectorAll(".product-image");
+            productImages.forEach(function(img) {
+                img.classList.remove("clicked");
+            });
+            // Add the 'clicked' class to the clicked image
+            clickedElement.classList.add("clicked");
+        } else {
+            // If the clicked element is not a product image, remove the 'clicked' class from all images
+            const productImages = document.querySelectorAll(".product-image");
+            productImages.forEach(function(img) {
+                img.classList.remove("clicked");
+            });
+        }
+    });
+});
+
+
+
+// 2nd
+ddocument.addEventListener("DOMContentLoaded", function() {
+    // Add event listener to the body to handle clicks on product images
+    document.body.addEventListener("click", function(event) {
+        const clickedElement = event.target;
+        // Check if the clicked element is a product image
+        if (clickedElement.classList.contains("product-image")) {
+            // Remove the 'clicked' class from all images
+            const productImages = document.querySelectorAll(".product-image");
+            productImages.forEach(function(img) {
+                img.classList.remove("clicked");
+                // Remove the overlay text
+                img.textContent = '';
+            });
+            // Add the 'clicked' class to the clicked image
+            clickedElement.classList.add("clicked");
+            // Add the overlay text to the clicked image
+            clickedElement.textContent = "BUY NOW!";
+        } else {
+            // If the clicked element is not a product image, remove the 'clicked' class from all images
+            const productImages = document.querySelectorAll(".product-image");
+            productImages.forEach(function(img) {
+                img.classList.remove("clicked");
+                // Remove the overlay text
+                img.textContent = '';
+            });
+        }
+    });
+});
+

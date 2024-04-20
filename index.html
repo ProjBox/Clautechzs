@@ -65,7 +65,7 @@
 </head>
 <body>
 
-	<!-- <div id="preloader">
+	<div id="preloader">
 	  <div id="status">
 	     <div class="spinner">
 	      <div class="rect1"></div>
@@ -75,7 +75,7 @@
 	      <div class="rect5"></div>
 	    </div>
 	  </div>
-	</div> -->
+	</div>
  
 	<div class="flex-main">
 		<!-- ==Header elements== -->
@@ -122,7 +122,7 @@
 			        	</a>
 			        </li>
 			        <li><a href="services/index.html" class="no-reload">Services</a></li>
-			        <li><a href="#contact">FAQ</a></li>
+			        <li><a href="#faq">FAQ</a></li>
 			        <li><a href="#contact">Contact</a></li>
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right spt">
@@ -763,7 +763,7 @@
       							<span>-10</span>
       						</span>
 		            	</div>
-		                <img class="product-image" src="items/fingerbattrey.png">
+		                <img class="product-image" src="items/fingerbattrey.png" tabindex="0">
 		                <h4 class="product-name">Finger Battrey</h4>
 		                <p class="product-description">Duracell Finger Power Battrey</p>
 		                <p class="product-category">Catg: accessories</p>
@@ -1042,6 +1042,155 @@
 			    </form>
 			    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
 	        </div>
+	 		<div id="faq"></div>       
+	        <div class="faq">
+	        	<div>
+	        		<h2>Frequently Asked Questions (FAQ)</h2>
+					<button type="button" class="collapsible activefaq">How to Buy?</button>
+					<div class="content" style="display: block;">
+					  <p>All products are ready for delivery, except for the<strong>"Not available" </strong>items.<br>
+					  	To place an order, simply click on the <strong>buy button</strong> and proceed to checkout.<br>
+					  </p>
+					  <p>To Learn More..
+					  <a href="#" onclick="playGif(); return false;">Click here</a>
+					  </p>
+
+						<div id="gifContainer" style="display: none;">
+						  <img id="gif" src="img/siteimg.png" alt="GIF Player" />
+						  <button id="closeButton" onclick="closeGif()" class="closegif" style="">X</button>
+						</div>
+					</div>
+					<button type="button" class="collapsible">How to make Payments?</button>
+					<div class="content">
+					  <p>We offer two payment options: <strong>Bank Transfer and Bank Debit Card</strong>.<br>
+					  To use bank transfer, simply click on the bank button to see bank details. Proceed to send your order amount to the provided bank. After your transfer transaction, click on the <strong>"Notify Seller"</strong> button. <br><br><strong>Note:</strong>You must complete your transfer before the 15-minute countdown, otherwise your order will be cancelled.<br><br>
+					  To learn more..
+					  <a href="#" onclick="playGif(); return false;">Click here</a>
+
+						<div id="gifContainer" style="display: none;">
+						  <img id="gif" src="img/siteimg.png" alt="GIF Player" />
+						  <button id="closeButton" onclick="closeGif()" class="closegif" style="">X</button>
+						</div>
+					  </p>
+					</div>
+					<button type="button" class="collapsible">How to Buy More than One Product and Adjust Item Quantity?</button>
+					<div class="content">
+					  <p>To select more than one item or product, simply click on the <strong>"add items"</strong> button in your product cart.<br><br>To increase the quantity of a single item or product, click on the quantity number field beside the product name.</p>
+					  <p>To Learn More..
+					  <a href="#" onclick="playGif(); return false;">Click here</a>
+					  </p>
+
+						<div id="gifContainer" style="display: none;">
+						  <img id="gif" src="img/siteimg.png" alt="GIF Player" />
+						  <button id="closeButton" onclick="closeGif()" class="closegif" style="">X</button>
+						</div>
+					</div>
+					<button type="button" class="collapsible">How to Pay with Bank Card?</button>
+					<div class="content">
+					  <p>To pay with your ATM card, Opay card, etc., simply select <strong>"pay with bank debit card"</strong> on the payment window and click on the link. Then wait for the payment gateway to open. When the payment window opens, fill in your card details and proceed.</p>
+					  <p>To Learn More..
+					  <a href="#" onclick="playGif(); return false;">Click here</a>
+					  </p>
+
+						<div id="gifContainer" style="display: none;">
+						  <img id="gif" src="img/siteimg.png" alt="GIF Player" />
+						  <button id="closeButton" onclick="closeGif()" class="closegif" style="">X</button>
+						</div>
+					</div>
+					<button type="button" class="collapsible">How to Print and Save my Order Receipt?</button>
+					<div class="content">
+					  <p>It is important to keep your <strong>"Order No"</strong> because that will confirm the originality of your transaction upon delivery.<br>To save your Order Receipt and Number, simply click on the <strong>"Print Order"</strong> and select <strong>print to PDF</strong> on the print window to save your Order Receipt.<br><br>Alternatively, you can simply take a screenshot of your Order Receipt to capture your Order Number.
+					  </p>
+					  <p>To Learn More..
+					  <a href="#" onclick="playGif(); return false;">Click here</a>
+					  </p>
+
+						<div id="gifContainer" style="display: none;">
+						  <img id="gif" src="img/siteimg.png" alt="GIF Player" />
+						  <button id="closeButton" onclick="closeGif()" class="closegif" style="">X</button>
+						</div>
+					</div>
+					<button type="button" class="collapsible">How to Receive Purchased Goods or Items?</button>
+					<div class="content">
+					  <p>Delivery is guaranteed.<br> We will deliver the purchased goods or items to your selected or preferred location. It is important to provide accurate details in the checkout form before making the payment. You must specify the delivery or pick-up location correctly.<br><br>
+					  	Once your payment is confirmed, your order will be marked and dispatched.<br> <strong>Note:</strong> We will need your <strong>"Order NO." or Order Receipt</strong> before handing over the product or item to you.
+					  </p>
+					  <p>To Learn More..
+					  <a href="#" onclick="playGif(); return false;">Click here</a>
+					  </p>
+
+						<div id="gifContainer" style="display: none;">
+						  <img id="gif" src="img/siteimg.png" alt="GIF Player" />
+						  <button id="closeButton" onclick="closeGif()" class="closegif" style="">X</button>
+						</div>
+					</div>
+					<button type="button" class="collapsible">How to Buy or Purchase Item on Credit?</button>
+					<div class="content">
+					  <p>To buy items on credit, simply click on the <strong>Credit Button</strong> to initiate a chat with our representative via WhatsApp.<br> You will need to follow up the chat to choose your preferred percentage credit deposit, starting from 45% to 80%.
+					  </p>
+					  <p>To Learn More..
+					  <a href="#" onclick="playGif(); return false;">Click here</a>
+					  </p>
+
+						<div id="gifContainer" style="display: none;">
+						  <img id="gif" src="img/siteimg.png" alt="GIF Player" />
+						  <button id="closeButton" onclick="closeGif()" class="closegif" style="">X</button>
+						</div>
+					</div>
+					<button type="button" class="collapsible">How to Search for Product?</button>
+					<div class="content">
+					  <p>To search for a particular product, simply enter the product or item name or keywords associated with the product in the search box at the top of our home page.<br><br>Alternatively, you can use the <strong>"filter button"</strong> to easily navigate to any product.
+					  </p>
+					  <p>To Learn More..
+					  <a href="#" onclick="playGif(); return false;">Click here</a>
+					  </p>
+
+						<div id="gifContainer" style="display: none;">
+						  <img id="gif" src="img/siteimg.png" alt="GIF Player" />
+						  <button id="closeButton" onclick="closeGif()" class="closegif" style="">X</button>
+						</div>
+					</div>
+					<button type="button" class="collapsible">How to Request an Item Not Listed?</button>
+					<div class="content">
+					  <p>To make a request for an item not listed, simply navigate to our <strong><a href="services/index.html">"Service Page"</a></strong> and fill in your request and details.<br><br>Upon submission of your request, our customer care team will follow up with you via call or WhatsApp.
+					  </p>
+					  <p>To Learn More..
+					  <a href="#" onclick="playGif(); return false;">Click here</a>
+					  </p>
+
+						<div id="gifContainer" style="display: none;">
+						  <img id="gif" src="img/siteimg.png" alt="GIF Player" />
+						  <button id="closeButton" onclick="closeGif()" class="closegif" style="">X</button>
+						</div>
+					</div>
+					<button type="button" class="collapsible">How to filter Products?</button>
+					<div class="content">
+					  <p>Product filters assist users in accessing specific categories within our collection, such as accessories, clothing, shoes, gaming, etc.<br><br>To apply a filter, simply click on the <strong>Filter Button Icon</strong> at the bottom right corner of the home page, above the <strong>"Scroll to top arrow button"</strong>.
+					  </p>
+					  <p>To Learn More..
+					  <a href="#" onclick="playGif(); return false;">Click here</a>
+					  </p>
+
+						<div id="gifContainer" style="display: none;">
+						  <img id="gif" src="img/siteimg.png" alt="GIF Player" />
+						  <button id="closeButton" onclick="closeGif()" class="closegif" style="">X</button>
+						</div>
+					</div>
+					<button type="button" class="collapsible">How to Change Product list Preview?</button>
+					<div class="content">
+					  <p>Feature NOT Available at the moment<br>
+					  	
+					  </p>
+					  <!-- To Learn More..
+					  <a href="#" onclick="playGif(); return false;">Click here</a>
+
+						<div id="gifContainer" style="display: none;">
+						  <img id="gif" src="img/siteimg.png" alt="GIF Player" />
+						  <button id="closeButton" onclick="closeGif()" class="closegif" style="">X</button>
+						</div> -->
+					</div>
+	        	</div>
+	        </div>
 	        <div id="contact-cta-section" class="contact-cta-section">
 			  <div class="wrapper-full">
 			    <div class="cta-wrapper">
@@ -1263,21 +1412,21 @@
 
 
 <script type="text/javascript">
-		// window.addEventListener("load", function() {
-		//     var status = document.getElementById("status");
-		//     var preloader = document.getElementById("preloader");
+		window.addEventListener("load", function() {
+		    var status = document.getElementById("status");
+		    var preloader = document.getElementById("preloader");
 
-		//     // Fade out the loading animation
-		//     status.style.opacity = 0;
-		//     preloader.style.display = "none";
+		    // Fade out the loading animation
+		    status.style.opacity = 0;
+		    preloader.style.display = "none";
 
 
-		//     // Delay and fade out the white DIV that covers the website
-		//     setTimeout(function() {
-		//         preloader.style.display = "none";
-		//         status.style.opacity = 0;
-		//     }, 1000);
-		// });
+		    // Delay and fade out the white DIV that covers the website
+		    setTimeout(function() {
+		        preloader.style.display = "none";
+		        status.style.opacity = 0;
+		    }, 1000);
+		});
 
 </script>
 
@@ -1662,56 +1811,63 @@
 
 <script type="text/javascript">
 
-	// // image Preview
-	// document.addEventListener("DOMContentLoaded", function() {
-	//     const productImages = document.querySelectorAll(".product-image");
-
-	//     productImages.forEach(function(image) {
-	//         image.addEventListener("click", function() {
-	//             // Remove the 'clicked' class from all images
-	//             productImages.forEach(function(img) {
-	//                 img.classList.remove("clicked");
-	//             });
-
-	//             // Add the 'clicked' class only to the currently clicked image
-	//             image.classList.add("clicked");
-	//         });
-	//     });
-	// });
-
-
-	document.addEventListener("DOMContentLoaded", function() {
-	    const productImages = document.querySelectorAll(".product-image");
-
-	    productImages.forEach(function(image) {
-	        image.addEventListener("click", function() {
-	            // Remove the 'clicked' class from all images
-	            productImages.forEach(function(img) {
-	                img.classList.remove("clicked");
-	            });
-
-	            // Add the 'clicked' class only to the currently clicked image
-	            image.classList.add("clicked");
-	        });
-	    });
-
-	    // Add event listener to the body to handle clicks outside the image
-	    document.body.addEventListener("click", function(event) {
-	        const clickedElement = event.target;
-	        // Check if the clicked element is not an image
-	        if (!clickedElement.classList.contains("product-image")) {
-	            // Remove the 'clicked' class from all images
-	            productImages.forEach(function(img) {
-	                img.classList.remove("clicked");
-	            });
-	        }
-	    });
-	});
-
-
-
-
 	
+
+	// 3rd res 
+	document.addEventListener("DOMContentLoaded", function() {
+    // Add event listener to the body to handle clicks on product images
+    document.body.addEventListener("click", function(event) {
+        const clickedElement = event.target;
+        // Check if the clicked element is a product image
+        if (clickedElement.classList.contains("product-image")) {
+            // Remove the 'clicked' class from all images
+            const productImages = document.querySelectorAll(".product-image");
+            productImages.forEach(function(img) {
+                img.classList.remove("clicked");
+                // Remove the overlay text
+                img.textContent = '';
+            });
+            // Add the 'clicked' class to the clicked image
+            clickedElement.classList.add("clicked");
+            // Add the overlay text to the clicked image
+            clickedElement.textContent = "BUY NOW!";
+        } else {
+            // If the clicked element is not a product image, remove the 'clicked' class from all images
+            const productImages = document.querySelectorAll(".product-image");
+            productImages.forEach(function(img) {
+                img.classList.remove("clicked");
+                // Remove the overlay text
+                img.textContent = '';
+            });
+        }
+    });
+});
+
+</script>
+<script type="text/javascript">
+	var coll = document.getElementsByClassName("collapsible");
+	var i;
+
+	for (i = 0; i < coll.length; i++) {
+	  coll[i].addEventListener("click", function() {
+	    this.classList.toggle("activefaq");
+	    var content = this.nextElementSibling;
+	    if (content.style.display === "block") {
+	      content.style.display = "none";
+	    } else {
+	      content.style.display = "block";
+	    }
+	  });
+	}
+</script>
+<script>
+  function playGif() {
+    document.getElementById('gifContainer').style.display = 'block';
+  }
+
+  function closeGif() {
+    document.getElementById('gifContainer').style.display = 'none';
+  }
 </script>
 
 

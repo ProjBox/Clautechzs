@@ -233,6 +233,9 @@
             box-shadow: inset 0px 3px 2px #37363647;
             border-top-left-radius: 20px;
             border-top-right-radius: 50px;*/
+
+            border-top: 3.5px solid #ff6600cc;
+            border-left: 0.5px solid #ff6600cc;
         }
 
         .products {
@@ -295,17 +298,35 @@
         }
 
         .products .product-image.clicked {
-            transform: scale(1.55);
+            transform: scale(1.5);
 
             /*background: #ebebeb;*/
-            background: #e3e3e3;
+            /*background: #e3e3e3;*/
+            /*background: #f2f2f2;*/
+            /*background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));*/
+            background: linear-gradient(to bottom, rgb(242 242 242) 10%, rgb(242 242 242) 80%, rgb(242 242 242 / 11%) 100%);
             border-radius: 0;
-            box-shadow: none;
-            border: none;
+            /*box-shadow: none;
+            border: none;*/
 
-            margin-bottom: -210px;
+
+            /*border-top: 1px solid #ff6600;
+            border-right: 1px solid #ff6600;*/
+
+            border-right: 8.5px dashed #ff66004a;
+            /*border-left: 1px solid #ff66004a;*/
+            border-top: none;
+            border-left: none;
+            border-bottom: none;
+
+            box-shadow: none;
+
+            margin-bottom: -178px;
         }
 
+
+
+       
 
         @media screen and (max-width: 980px) {
             .products {
@@ -439,17 +460,19 @@
 
                   border-bottom: 2px solid #ff6600;
                   border-left: 2px solid #ff6600;
+
             }
 
                 .products .product-image.clicked {
-                transform: scale(1.55);
+                transform: scale(1.5);
 
-                background: #ebebeb;
+                /*background: #ebebeb;*/
+                background: linear-gradient(to bottom, rgb(242 242 242) 10%, rgb(242 242 242) 80%, rgb(242 242 242 / 11%) 100%);
                 /*background: #e9cab6;*/
                 border-radius: 0;
                 box-shadow: none;
 
-                margin-bottom: -50px;
+                margin-bottom: -95px;
 
                 box-shadow: 1px 0px 4px 1px rgb(0 0 0 / 10%);
             }
@@ -1017,7 +1040,7 @@
 
         body {
             font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-            font-size: 14px;
+            font-size: 15px;
             line-height: 1.42857143;
             color: #000208;
             background-color: #e3e3e3;
@@ -1395,7 +1418,18 @@
                 position: relative;
                 display: block;
                 padding: 15px 10px;
+
+                letter-spacing: 0 !important;
             }
+        }
+
+
+        @media only screen and (max-width: 861px) and (min-width: 799px){
+
+            .nav>li>a {
+                padding: 10px 10px;
+            }
+
         }
         
 
@@ -2818,7 +2852,8 @@ text-rendering: optimizeLegibility;
 /*padding: 75px 0 10px 0;*/
 /*float: left;*/
 width: 100%;
-text-align: center; 
+text-align: center;
+background: #d1cfcf; 
 }
 
 .wrapper-full {
@@ -3379,3 +3414,95 @@ box-shadow: rgba(0,0,0,.24) 0px 3px 4px !important;
 
 
 }
+
+
+    /*FAQ*/
+    .faq{
+
+        background: #f0f0f0;
+        padding: 22px;
+    }
+
+    #faq{
+
+        margin-top: 90px;
+    }
+    .faq h2 {
+        font-size: 22px;
+        padding: 25px 10px;
+    }
+    .collapsible {
+      background-color: #fffdfd;
+      color: #ff6600;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 18.5px;
+    }
+
+    .activefaq, .collapsible:hover {
+      background-color: #ff6600;
+      color: white;
+    }
+
+    .content {
+      padding: 9px 18px;
+      display: none;
+      overflow: hidden;
+      /*background-color: #f1f1f1;*/
+      /*background: #ffffff;*/
+      background: #f0f0f0;
+    }
+
+    .content a{
+
+        color: #ff6600;
+    }
+
+    #gifContainer {
+    width: 80%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #ff6600;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    z-index: 9999;
+  }
+
+  #gifContainer img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 30px;
+  }
+  .closegif{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff6600;
+    outline: none;
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    font-weight: 600;
+
+  }
+
+  @media screen and (max-width:600px){
+
+    #gifContainer{
+
+        width: 95%;
+    }
+
+    #faq{
+
+        margin-top: 0;
+    }
+
+  }

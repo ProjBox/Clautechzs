@@ -33,14 +33,35 @@ document.addEventListener("DOMContentLoaded", function() {
 
         
         // // Function to handle the beforeunload event
+        // function handleBeforeUnload(event) {
+        //     const currentStep = 2; // In the step number
+        //     if (currentStep === 2) { 
+        //         // Display a confirmation message if the user is on step 2
+        //         event.preventDefault();
+        //         event.returnValue = ''; // For Chrome
+        //         return ''; // For other browsers
+        //     }
+        // }
+
+        // Function to handle the beforeunload event
         function handleBeforeUnload(event) {
-            const currentStep = 2; // In the step number
-            if (currentStep === 2) { 
-                // Display a confirmation message if the user is on step 2
+            const currentStep = 2; // Change this to reflect the current step
+            if (currentStep === 2 || currentStep === 3) { 
+                // Display a confirmation message if the user is on step 2 or 3
                 event.preventDefault();
                 event.returnValue = ''; // For Chrome
                 return ''; // For other browsers
             }
+        }
+
+        // Call this function to add the beforeunload event listener
+        function addBeforeUnloadListener() {
+            window.addEventListener('beforeunload', handleBeforeUnload);
+        }
+
+        // Call this function to remove the beforeunload event listener
+        function removeBeforeUnloadListener() {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
         }
 
 
@@ -516,8 +537,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 const qty = document.querySelector(`#${item.product} .quantity-value`).value;
                 return `${item.productName} (Qty: ${qty} Price: ₦${(item.productPrice).toFixed(2)})`;
             });
-            const detailsString = detailsArray.join(" | ");
-            const fullDetails = detailsString + " || Total: ₦" + cart.total.toFixed(2);
+            const detailsString = detailsArray.join("|");
+            const fullDetails = detailsString + " ||Total: ₦" + cart.total.toFixed(2);
 
             // Populating the input field
             const inputField = document.getElementById("productDetailsInput");
@@ -1011,6 +1032,8 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('notifyButton').addEventListener('click', function(event) {
             // Prevent default form submission behavior
             // event.preventDefault();
+            stopTimer();
+            removeBeforeUnloadListener();
 
                 // Proceed with form submission if reCAPTCHA is valid
                 const selectedBank = document.querySelector('.bank-radio:checked');
