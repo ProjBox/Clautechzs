@@ -2594,7 +2594,7 @@ width: 120px;
     .scroller::-webkit-scrollbar-thumb {
       /*background: #ff6600;*/
       background-color: #ff660087;
-      border-radius: 3px;
+      border-radius: 9px;
     }
 
     /* Hover effect */
@@ -2603,11 +2603,14 @@ width: 120px;
       background: #ff6600;
     }
 
-    @media only screen and (max-width: 600px){
+    @media (max-width: 600px){
 
        /* WebKit browsers like Safari and Chrome */
         .scroller::-webkit-scrollbar {
-          width: 5px;
+          width: 3px;
+        }
+         ::-webkit-scrollbar {
+          width: 3.5px; /* Width of the scrollbar */
         }
 
     }
