@@ -164,6 +164,10 @@
 		    align-items: center;
 		    padding: 150px 20px 350px 20px;
 		}
+		.deploy{
+
+			color: #ffe0cbd4 !important;
+		}
 		.time-content .time {
 		  display: flex;
 		  align-items: center;
@@ -173,11 +177,13 @@
 		  font-weight: 800;
 		  font-size: 80px;
 		  line-height: 1;
-		  color: #eee;
+		  /*color: #eee;*/
+		  color: #ffe0cbd4;
 		}
 		.time .text {
 		  text-transform: capitalize;
-		  color: #fff;
+		  /*color: #fff;*/
+		  color: #ffe0cbd4;
 		  font-weight: 600;
 		  font-size: 12px;
 		}
@@ -345,7 +351,7 @@
 			  	  	 <!-- <p>
 			  	  	 	Deploying in the Next..
 			  	  	 </p> -->
-			  	  	 <p>
+			  	  	 <p class="deploy">
 			  	  	 	Deploying soon in less than..
 			  	  	 </p>
 			  	  </div>
@@ -402,6 +408,20 @@
  
  
 <script src="../dir/jquery/jquery.min.js"></script>
+<script type="text/javascript">
+    $('#newsLetter').on('submit', function(e) {
+
+      $('#icont').append('<i class="bi bi-check-circle-fill"></i>');
+      $('#subz').prepend('Subscription <span style="color: #92ffb0; font-weight: 600; font-size: 17px;"> Successful!</span>');
+      $('#fade *').fadeIn(3000);
+      $('#fadez *').fadeOut(1000);
+      // $('#fadez *').fadeIn(5000);
+
+      setTimeout(function() {
+           window.location.reload();
+        }, 5000);
+      });
+</script>
 <script src="../dir/bootstrap-3.4/js/bootstrap.min.js"></script>
 <script src="../js/index.js"></script>
 <script src="https://js.paystack.co/v1/inline.js"></script>
