@@ -74,23 +74,26 @@ const entryIdToElementIdMap = {
     '7e3WdPW6D70r3kQmGFJ7xb': 'InfinixCharger',
     '1oQWcileLrxC6m10wgr8nX': 'OraimoCharger',
     'amnFTwQk5WfBZTpCGaoaN': 'sevenstartypeccord',
-    // Add more mappings for other products as needed
+    // More mappings Continue..
     '50S0UEcdY5CIJXOhSpVDCc': 'gamepad',
     '3EihFFavRmIlnsB08Il1J4': 'pclock',
+    'L4PqaMHVMJBIKr64IGUWj': 'SelfShineshoe',
     '6IwEhyczQLxQF3PHuSYYmC': 'wirelessmouse',
     '5aMXAEWAJIUwNe8fkikX3F': 'porpo',
+    '3lF8fKAlem4c5HKalyTdxB': 'Sandiskdualusbflashdrv',
     '3iEhSXKkfy2cG5bAN27Vt7': 'XboxSingleGamepd',
     '2MTDp6SOg7KYMhqbbUtNoF': 'laptMilitarySkinCover',
     'M7UVv0vq1MM59THmJdEiY':  'readingbulb',
     '6pILUlGjcJRoMpd1Zfefwk': 'oraimoPowerBank2',
     '2BNurjOZu1GKZ7o7FbqElh': 'SingleWirelessGamepd',
+    '1cHGouWn58mSf2LFEW8qQO': 'SinglewiredGamepad',
     '54QLtxwynOGmt3IeuL8If7': 'oraimoearphone',
     '5yT09NJsewwx4jUWMzACDl': 'iPhoneearphone',
     '3CQxcHfecLaPXoWSh0P6Kr': 'budearpod',
     '4dR1kq0DDZzURyX7PUUDbw': 'keyboardmouse',
     '1a57yRkeVU2yDvRl4ltKSG': 'Boxers',
     '70hp4R6h4KBrZb6L471pse': 'Singlet',
-    '3zpHKjYkjqLCULtZFPKffT': 'whitesocks',
+    '3zpHKjYkjqLCULtZFPKffT': 'whiteLeatherShoe',
     '21eHuoxLZFubRqTcekKr7S': 'yelloshirt',
     '3yBYPWUPm6Cfqk78iXq0RB': 'ptwhitesportswear',
     '2LMZcoE5Q28xUmor5Sue30': 'whiteshort',
@@ -98,11 +101,21 @@ const entryIdToElementIdMap = {
     '5LdRDDQzEIImnVWIWN0mMH': 'coverall',
     '2pYIFBbxsoEGGXj8MkNizt': 'touchlight',
     'ihdwcEHLjw186JsLZaMLR': 'FrezzilEarphone',
-    '5E5lTvpzFN2urzjmKavuLu': 'OraimoCharger',
+    '5E5lTvpzFN2urzjmKavuLu': 'OraimoIphoneCord',
+    '3mcokbSJtSD4t1G2pEGzlo': 'oraimotypeCcharger',
     '68szwwUQK8Xzm8YPpcula0': 'wiredmouse',
     '5Kq2H5jN7Cil8JsQwxJirq': 'laptopSkinCover',
     '1pw52IEhe0t6hDjoBXkF3q': 'DoubleWiredGamepd',
-    '5lHZ2fAbTZq1zfGEongGXy': 'fingerbattrey'
+    '5lHZ2fAbTZq1zfGEongGXy': 'fingerbattrey',
+    '3Y0s5xi3KBhgb3wDlYfxei': 'itelandroidcord',
+    // Recent Shipments Slider
+    '54rBMEHevUGyTaVQjIHoZt': 'BrownlaptopBagshipment',
+    '3hBNJdDOm6HEi6Xj8Dk4df': 'BlackSportsTrackshipment',
+    '4ZY0e6qBeO1lbfVtdd5wvY': 'sandiskflashshipment',
+    '7o7Sn1QgzR0BhLlYFrONv8': 'whiteLeatherShoeshipment',
+    '2GC9Yd39HITmuCIvrguC8A': 'oraimotypeCchargershipment',
+    '1kx2LAc8RN6jMerJGnkoTE': 'oraimoPowerBank2shipment',
+    'ECa1KNpypKgfELvYBzo8m': 'XboxSingleGamepdshipment'
 
 };
 
