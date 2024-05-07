@@ -2813,7 +2813,7 @@ width: 120px;
     -o-background-size: cover;
     background-size: cover;
     height: 100%;
-    z-index:99;
+    z-index: 999999;
 }
 
 #status {
