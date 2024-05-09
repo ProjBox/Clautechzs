@@ -41,6 +41,7 @@
 	<meta name="twitter:creator" content="@Clautechzs">
 	<meta name="twitter:card" content="summary_large_image" />
 	<!--#===SEO Basic Setup==#-->
+ 
 	
 	 <link rel="stylesheet" href="dir/bootstrap-3.4/css/bootstrap.min.css">
 	 <!-- ==Css[external]== -->
@@ -51,7 +52,7 @@
 	<link rel="shortcut icon" type="text/css" href="img/fav.png">
 	<!-- Fontawesome -->
 	<link href="dir/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
-
+ 
 
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
@@ -1023,7 +1024,7 @@
 	                    		<input type="text" id="storeItem" placeholder="Store" value="Store"  name="entry.1567565713" readonly>
 	                    	</div>
 	                    	<div class="col-md-4 mb-3 form-ins-cont storeItem">
-	                    		<input type="text" id="authority" placeholder="authority" value="Clautechzs" name="entry.1696031714" readonly>
+	                    		<input type="text" id="authority" placeholder="authority" value="CLautechzs" name="entry.1696031714" readonly>
 	                    	</div>
 	                        <div class="col-md-4 mb-3 form-ins-cont">
 	                            <label for="name">Name:</label>
@@ -1390,7 +1391,7 @@
 		    </span>
 		    <ul>
 		        <li>Filter Products</li>
-		        <li>
+		        <!-- <li>
 		            <button id="accessoriesFf-btn" class="filter-btn">Accessories</button>
 		            <div class="checkFf-icon" id="accessories-check-icon">
 		                <i class="fa fa-check-circle d" aria-hidden="true"></i>
@@ -1401,7 +1402,7 @@
 		            <div class="checkFf-icon" id="store-check-icon">
 		                <i class="fa fa-check-circle d" aria-hidden="true"></i>
 		            </div>
-		        </li>
+		        </li> -->
 		        <!-- New Filter Buttons -->
 		       
 		        <li>
@@ -1634,6 +1635,50 @@
 
 </script>
 
+
+<script type="text/javascript">
+	
+// Filter products by category
+function filterProducts(category) {
+    // Get all product elements
+    var products = document.querySelectorAll('.products');
+    
+    products.forEach(function(product) {
+        var productCategory = product.querySelectorAll('.product-category').textContent.toLowerCase();
+        
+        // Check if the product category matches the selected category or is not "Accessories"
+        if (category === 'accessories' && productCategory.includes(category)) {
+            // If it's "Accessories" and the product category is "Accessories", display the product
+            product.style.display = 'block';
+        } else if (category === '' || (category !== 'accessories' && !productCategory.includes('accessories'))) {
+            // If no category is specified or the product category is not "Accessories", display the product
+            product.style.display = 'block';
+        } else {
+            // Else hide the product
+            product.style.display = 'none';
+        }
+    });
+}
+
+// Handle click on "Accessories" button
+document.getElementById('accessories-btn').onclick = function() {
+    filterProducts('accessories');
+};
+
+// Handle click on "Others" button
+document.getElementById('store-btn').onclick = function() {
+    // When clicking "Others", we'll pass an empty string to the filterProducts function
+    // This will effectively show all products that are not in the "Accessories" category
+    filterProducts('');
+};
+
+
+
+
+
+</script>
+
+
 <script type="text/javascript">
     // Function to toggle action container
     function actionToggle() {
@@ -1659,18 +1704,18 @@
     }
 
     // Handle click on "Accessories" button
-    document.getElementById('accessoriesFf-btn').onclick = function() {
-        filterProducts('accessories');
-        toggleCheckIcon('accessories-check-icon');
-        actionToggle(); 
-    };
+    // document.getElementById('accessoriesFf-btn').onclick = function() {
+    //     filterProducts('accessories');
+    //     toggleCheckIcon('accessories-check-icon');
+    //     actionToggle(); 
+    // };
 
     // Handle click on "Others" button
-    document.getElementById('storeFf-btn').onclick = function() {
-        filterProducts('others');
-        toggleCheckIcon('store-check-icon');
-        actionToggle(); 
-    };
+    // document.getElementById('storeFf-btn').onclick = function() {
+    //     filterProducts('others');
+    //     toggleCheckIcon('store-check-icon');
+    //     actionToggle(); 
+    // };
 
     // ADDED MORE
 
@@ -2048,7 +2093,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <script>
   
-	
 
 </script>
 

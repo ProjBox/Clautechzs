@@ -1,27 +1,11 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-// const contentful = require('contentful')
->>>>>>> parent of 8a76230 (update and cms testing)
-=======
-// const contentful = require('contentful')
->>>>>>> parent of 8a76230 (update and cms testing)
 
 
 
 
 var client = contentful.createClient({
   space: 'duubq1vrcl0m',
-<<<<<<< HEAD
-<<<<<<< HEAD
   accessToken: 'ysKMz0klC3mETUOcntbm8jPjQ4TGVgGqwC0DMdtnNDg'
-=======
-  accessToken: 'u4d_k9erxNYrk3Pm6RDZ4NmZWqU0Nwjd9y4NSkrvNtU'
->>>>>>> parent of 8a76230 (update and cms testing)
-=======
-  accessToken: 'u4d_k9erxNYrk3Pm6RDZ4NmZWqU0Nwjd9y4NSkrvNtU'
->>>>>>> parent of 8a76230 (update and cms testing)
 });
 
 
