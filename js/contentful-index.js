@@ -75,7 +75,7 @@ const entryIdToElementIdMap = {
     '1oQWcileLrxC6m10wgr8nX': 'OraimoCharger',
     'amnFTwQk5WfBZTpCGaoaN': 'sevenstartypeccord',
     // More mappings Continue..
-    '50S0UEcdY5CIJXOhSpVDCc': 'gamepad',
+    '3ID4I7eS5rI6JHJ6aglUmL': 'gamepad',
     '3EihFFavRmIlnsB08Il1J4': 'pclock',
     'L4PqaMHVMJBIKr64IGUWj': 'SelfShineshoe',
     '6IwEhyczQLxQF3PHuSYYmC': 'wirelessmouse',
