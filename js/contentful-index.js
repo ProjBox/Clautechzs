@@ -13,7 +13,8 @@ client.getEntries()
     const products = response.items;
     //  dynamic model population
     products.forEach((product) => {
-      const productId = product.sys.productIdcore; 
+      // const productId = product.sys.productIdcore;
+      const productId = product.fields.productIdcore; 
       // const productBrand = product.fields.brandcore;
       const productBrand = product.fields.brandcore ? product.fields.brandcore : '';
       const productDiscount = product.fields.discountcore;
