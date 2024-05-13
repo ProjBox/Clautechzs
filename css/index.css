@@ -3783,12 +3783,14 @@ box-shadow: rgba(0,0,0,.24) 0px 3px 4px !important;
 
     align-items: stretch;
 
+    width: 100%;
+
 }
 
 @keyframes scrolling {
 
     30% {
-        transform: translateX(80%);
+        transform: translateX(90%);
     }
 
     100% {
@@ -3838,6 +3840,8 @@ box-shadow: rgba(0,0,0,.24) 0px 3px 4px !important;
 .slider-items .ribon-cont{
 
     margin-right: 29px;
+
+    display: flex;
 
     /*margin-right: 29px;
     margin-top: auto;
@@ -3952,6 +3956,12 @@ box-shadow: rgba(0,0,0,.24) 0px 3px 4px !important;
             margin-right: 0;
         }
 
+        #Recent-Post{
+
+            border-top: 12px inset #00000045;
+
+        }
+
    }
 
   
@@ -4032,6 +4042,12 @@ box-shadow: rgba(0,0,0,.24) 0px 3px 4px !important;
         .product-description{
 
             width: 55%;
+        }
+
+        #Recent-Post{
+
+            border-top: 12px inset #00000045;
+
         }
 
     }
@@ -4220,7 +4236,7 @@ box-shadow: rgba(0,0,0,.24) 0px 3px 4px !important;
 
 .posthead-2{
 
-    border-bottom: 1px inset #9c9c9ce3;
+    border-bottom: 1px inset #9c9c9cc4;
     background: #d2d2d240;
     padding-top: 20px;
     border-top: 1px solid #9c9c9c3b;
@@ -4243,3 +4259,17 @@ box-shadow: rgba(0,0,0,.24) 0px 3px 4px !important;
 
 }
 
+@media only screen and (max-width: 600px){
+
+
+        #Recent-Post{
+
+            border-top: 10.5px inset #00000045;
+
+        }
+
+        .posthead-2 {
+            border-bottom: 5px solid #9c9c9cc4;
+        }
+
+   }
