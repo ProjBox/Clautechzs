@@ -43,7 +43,9 @@ client.getEntries()
         <p class="product-price">${productPrice}</p>
         <button class="add-to-cart">BUY</button>
       `;
-      document.getElementById('shop').appendChild(productElement);
+      // document.getElementById('shop').appendChild(productElement);
+      document.getElementById('Recent-Post').appendChild(productElement);
+      
 
       // Inside the forEach loop for products
       // Find the spans within the product element

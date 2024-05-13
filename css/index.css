@@ -3471,7 +3471,7 @@ box-shadow: rgba(0,0,0,.24) 0px 3px 4px !important;
 
     #faq{
 
-        margin-top: 90px;
+        /*margin-top: 90px;*/
     }
     .faq h2 {
         font-size: 22px;
@@ -4188,4 +4188,50 @@ box-shadow: rgba(0,0,0,.24) 0px 3px 4px !important;
     66.66%, 100% {
         background-image: -webkit-linear-gradient(92deg, #ff6600, #ff6600);
     }
+}
+
+
+/*Recent Post Style*/
+#Recent-Post{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: stretch;
+    /*margin: 5% 1%;*/
+
+    background: #d6d6d6;
+    border-top: 12px ridge #00000045;
+    /*border-top-left-radius: 10px;*/
+    /*border-top-right-radius: 10px;*/
+
+    padding-top: 25px;
+}
+/*#Store-Update{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: stretch;
+    margin: 5% 1%;
+}*/
+
+.posthead-2{
+
+    border-bottom: 1px inset #9c9c9ce3;
+    background: #d2d2d240;
+    padding-top: 20px;
+    border-top: 1px solid #9c9c9c3b;
+
+}
+.posthead-2 h4{
+
+    font-size: 22px !important;
+}
+
+.posthead-2 .feature-icon{
+
+    font-size: 28px;
 }
