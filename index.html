@@ -115,21 +115,27 @@
 			    <div class="collapse navbar-collapse" id="myNavbar">
 			      <ul class="nav navbar-nav">
 			        <li class="active"><a href="index.html">Home</a></li>
-			        <li>
+			        <!-- <li>
 			        	<a href="#" id="accessories-btn" class="filter-btn">
 			        		Accessories
 			        		<span class="check-icon">
 			        			<i class="fa fa-check-circle c" aria-hidden="true"></i>
 			        		</span>
 			        	</a>
-			        </li>
+			        </li> -->
 			        <li>
-			        	<a href="#" id="store-btn" class="filter-btn">
+			        	<a href="#Store-Update" id="store-btn" class="filter-btn">
 			        		Store
 			        		<span class="check-icon check-store">
 			        			<i class="fa fa-check-circle c" aria-hidden="true"></i>
 			        		</span>
 			        	</a>
+			        	<!-- <a href="#Store-Update" id="store-btn" class="filter-btn">
+			        		Shop
+			        		<span class="check-icon check-store">
+			        			<i class="fa fa-check-circle c" aria-hidden="true"></i>
+			        		</span>
+			        	</a> -->
 			        </li>
 			        <!-- <li><a href="services/index.html" class="no-reload">Services</a></li> -->
 			        <li><a href="https://services.clautechzs.com/" class="no-reload">Services</a></li>
@@ -1614,6 +1620,34 @@
 
 </script>
 
+<script type="text/javascript">
+	
+	// Scroll to the element corresponding to the hash fragment in the URL
+	function scrollToHashElement() {
+	  // Get the hash fragment from the URL
+	  const hash = window.location.hash;
+	  // If a hash fragment exists
+	  if (hash) {
+	    // Scroll to the element corresponding to the hash
+	    scrollToElement(hash.substring(1)); // Remove the '#' character 
+	  }
+	}
+
+	// Scroll to a specific element by ID
+	function scrollToElement(id) {
+	  // Scroll to the element with the specified ID
+	  const element = document.getElementById(id);
+	  if (element) {
+	    element.scrollIntoView({ behavior: 'smooth' });
+	  }
+	}
+
+	// Call scrollToHashElement when the page loads
+	window.addEventListener('load', scrollToHashElement);
+
+
+</script>
+
 <script>
 
         //Get the button
@@ -1678,43 +1712,68 @@
 <script type="text/javascript">
 	
 // Filter products by category
-function filterProducts(category) {
-    // Get all product elements
-    var products = document.querySelectorAll('.products');
+// function filterProducts(category) {
+//     // Get all product elements
+//     var products = document.querySelectorAll('.products');
     
-    products.forEach(function(product) {
-        var productCategory = product.querySelectorAll('.product-category').textContent.toLowerCase();
+//     products.forEach(function(product) {
+//         var productCategory = product.querySelectorAll('.product-category').textContent.toLowerCase();
         
-        // Check if the product category matches the selected category or is not "Accessories"
-        if (category === 'accessories' && productCategory.includes(category)) {
-            // If it's "Accessories" and the product category is "Accessories", display the product
-            product.style.display = 'block';
-        } else if (category === '' || (category !== 'accessories' && !productCategory.includes('accessories'))) {
-            // If no category is specified or the product category is not "Accessories", display the product
-            product.style.display = 'block';
-        } else {
-            // Else hide the product
-            product.style.display = 'none';
-        }
-    });
-}
+//         // Check if the product category matches the selected category or is not "Accessories"
+//         if (category === 'accessories' && productCategory.includes(category)) {
+//             // If it's "Accessories" and the product category is "Accessories", display the product
+//             product.style.display = 'block';
+//         } else if (category === '' || (category !== 'accessories' && !productCategory.includes('accessories'))) {
+//             // If no category is specified or the product category is not "Accessories", display the product
+//             product.style.display = 'block';
+//         } else {
+//             // Else hide the product
+//             product.style.display = 'none';
+//         }
+//     });
+// }
 
-// Handle click on "Accessories" button
-document.getElementById('accessories-btn').onclick = function() {
-    filterProducts('accessories');
-};
+// // Handle click on "Accessories" button
+// document.getElementById('accessories-btn').onclick = function() {
+//     filterProducts('accessories');
+// };
 
-// Handle click on "Others" button
-document.getElementById('store-btn').onclick = function() {
-    // When clicking "Others", we'll pass an empty string to the filterProducts function
-    // This will effectively show all products that are not in the "Accessories" category
-    filterProducts('');
-};
+// // Handle click on "Others" button
+// document.getElementById('store-btn').onclick = function() {
+//     // When clicking "Others", we'll pass an empty string to the filterProducts function
+//     // This will effectively show all products that are not in the "Accessories" category
+//     filterProducts('');
+// };
 
-
-
-
-
+</script>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+	    // var accessoriesBtn = document.getElementById('accessories-btn');
+	    var storeBtn = document.getElementById('store-btn');
+	    
+	    // accessoriesBtn.addEventListener('click', function() {
+	    //     closeNavbarMenuWithDelay();
+	    // });
+	    
+	    storeBtn.addEventListener('click', function() {
+	        closeNavbarMenuWithDelay();
+	    });
+	    
+	    function closeNavbarMenuWithDelay() {
+	        setTimeout(function() {
+	            closeNavbarMenu();
+	        }, 2000); // Delay for 3 seconds (3000 milliseconds)
+	    }
+	    
+	    function closeNavbarMenu() {
+	        var navbarToggle = document.querySelector('.navbar-toggle');
+	        if (navbarToggle.classList.contains('collapsed')) {
+	            return; // Navbar menu is already closed
+	        }
+	        var navbarCollapse = document.getElementById('myNavbar');
+	        navbarToggle.click(); // Simulate click to close navbar menu
+	    }
+	});
 </script>
 
 
@@ -1729,7 +1788,10 @@ document.getElementById('store-btn').onclick = function() {
     // Filter products by category
     function filterProducts(category) {
         // var products = document.querySelectorAll('.products');
-        var products = document.querySelectorAll('#shop .products');
+        // var products = document.querySelectorAll('#shop .products');
+
+        // Get all product elements in both #shop and #Recent-Post sections
+        var products = document.querySelectorAll('#shop .products, #Recent-Post .products');
         
         products.forEach(function(product) {
             var productCategory = product.querySelector('.product-category').textContent.toLowerCase();
@@ -1836,36 +1898,6 @@ document.getElementById('store-btn').onclick = function() {
         actionToggle();
     };
 
-</script>
-
-<script>
-	document.addEventListener('DOMContentLoaded', function () {
-	    var accessoriesBtn = document.getElementById('accessories-btn');
-	    var storeBtn = document.getElementById('store-btn');
-	    
-	    accessoriesBtn.addEventListener('click', function() {
-	        closeNavbarMenuWithDelay();
-	    });
-	    
-	    storeBtn.addEventListener('click', function() {
-	        closeNavbarMenuWithDelay();
-	    });
-	    
-	    function closeNavbarMenuWithDelay() {
-	        setTimeout(function() {
-	            closeNavbarMenu();
-	        }, 2000); // Delay for 3 seconds (3000 milliseconds)
-	    }
-	    
-	    function closeNavbarMenu() {
-	        var navbarToggle = document.querySelector('.navbar-toggle');
-	        if (navbarToggle.classList.contains('collapsed')) {
-	            return; // Navbar menu is already closed
-	        }
-	        var navbarCollapse = document.getElementById('myNavbar');
-	        navbarToggle.click(); // Simulate click to close navbar menu
-	    }
-	});
 </script>
 
 
@@ -2199,12 +2231,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	//   .catch((error) => {
 	//     console.log("Error fetching products: ", error);
 	//   });
-
-
-</script>
-
-<script type="text/javascript">
-	
 
 
 </script>
