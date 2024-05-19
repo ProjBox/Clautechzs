@@ -116,7 +116,7 @@ const entryIdToElementIdMap = {
     '3hBNJdDOm6HEi6Xj8Dk4df': 'BlackSportsTrackshipment',
     '4ZY0e6qBeO1lbfVtdd5wvY': 'sandiskflashshipment',
     '7o7Sn1QgzR0BhLlYFrONv8': 'whiteLeatherShoeshipment',
-    '2GC9Yd39HITmuCIvrguC8A': 'oraimotypeCchargershipment',
+    '2mDRqDKlfxf43f6CWEYiBm': 'oraimotypeCchargershipment',
     '1kx2LAc8RN6jMerJGnkoTE': 'oraimoPowerBank2shipment',
     'ECa1KNpypKgfELvYBzo8m': 'XboxSingleGamepdshipment'
 
