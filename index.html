@@ -380,7 +380,7 @@
 		        	
 		        </div> 
 
-		        <div class="banner">
+		        <div class="banner" id="banner">
 				    <div class="banner__content">
 				      <div class="banner__text credit-text">
 				        <strong style="font-style: normal; color: yellow; border: 1px solid; padding: 2px 4.5px;">Explore Credit Options:</strong><br> Interested in flexible payment plans? Click on the credit button to discover our credit offerings.
@@ -1134,6 +1134,11 @@
 
 		let report = document.getElementById('searchReport')
 
+		let firstCont = document.getElementById('ctabanner')
+		let secondCont = document.getElementById('shopNew')
+		let thirdCont = document.getElementById('banner')
+
+
 		for(var i = 0;i<=l.length;i++){
 
 			let a=item[i].getElementsByTagName('h4')[0];
@@ -1143,6 +1148,11 @@
 			if(value.toUpperCase().indexOf(filter) > -1){
 
 				item[i].style.display="";
+				report.style.display="none";
+
+				firstCont.style.display="block";
+				secondCont.style.display="block";
+				thirdCont.style.display="block";
 			}
 			else
 			{
@@ -1150,6 +1160,10 @@
 				item[i].style.display="none";
 
 				report.style.display="flex";
+
+				firstCont.style.display="none";
+				secondCont.style.display="none";
+				thirdCont.style.display="none";
 
 			}
 		}
