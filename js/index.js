@@ -1,7 +1,7 @@
-
 //*** Js Block initiated and designed by Ben Alley ***
-// @ benedictokechukwuemail@gmail.com, ben@benalley.net
+//*** @ benedictokechukwuemail@gmail.com, ben@benalley.net ***
 //*** Promoted by Clautechzs e-commerce production 2023/2024 **
+// ------------------------------------------------------------
 
 document.addEventListener("DOMContentLoaded", function() {
         /*__==Global Variables==__*/
